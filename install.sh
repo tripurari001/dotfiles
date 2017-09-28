@@ -26,13 +26,14 @@ nvimrcDestination=$nvimDirDestination/init.vim
 # not found
 alias pacup='echo "package manager not found"'
 alias pacin='echo'
-if type apt-get > /dev/null; then
+if type apt-get >> /dev/null; then
   alias pacup='sudo apt-get update'
   alias pacin='sudo apt-get install'
-fi
-if type zypper > /dev/null; then
-  alias pacup='sudo zypper refresh'
-  alias pacin='sudo zypper install'
+else
+  if type zypper >> /dev/null; then
+    alias pacup='sudo zypper refresh'
+    alias pacin='sudo zypper install'
+  fi
 fi
 
 echo ""
@@ -93,6 +94,10 @@ ln -s $vimDir $nvimDirDestination
 ln -s $tmux $tmuxDestination
 ln -s $zsh $zshrcDestination
 ln -s $ohmyzshDir $ohmyzshDestination
+
+mkdir $vimDir/swaps
+mkdir $vimDir/backups
+mkdir $vimDir/undo
 
 echo "\n vim, nvim, tmux, zsh, oh-my-zsh configration setup completed successfully \n"
 echo "\n updating repository to install required software \n"
