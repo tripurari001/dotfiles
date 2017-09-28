@@ -22,6 +22,19 @@ vimDirDestination=~/.vim
 nvimDirDestination=~/.config/nvim
 nvimrcDestination=$nvimDirDestination/init.vim
 
+# for error handling in case package manager
+# not found
+alias pacup='echo "package manager not found"'
+alias pacin='echo'
+if type apt-get > /dev/null; then
+  alias pacup='sudo apt-get update'
+  alias pacin='sudo apt-get install'
+fi
+if type zypper > /dev/null; then
+  alias pacup='sudo zypper refresh'
+  alias pacin='sudo zypper install'
+fi
+
 echo ""
 echo "                                 ########  ##    ##  "
 echo "                                 ##     ##  ##  ##   "
@@ -44,6 +57,7 @@ sleep 2s
 
 if [ ! -d ~/.trippcconfig ]; then
   echo "\n ~/.trippcconfig directory not found \n Aborting the installation"
+  sleep 2s
   exit;
 fi
 
@@ -81,7 +95,26 @@ ln -s $zsh $zshrcDestination
 ln -s $ohmyzshDir $ohmyzshDestination
 
 echo "\n vim, nvim, tmux, zsh, oh-my-zsh configration setup completed successfully \n"
+echo "\n updating repository to install required software \n"
 sleep 2s
+
+pacup
+if ! type zsh > /dev/null; then
+  pacin zsh
+fi
+if ! type vim > /dev/null; then
+  pacin vim
+fi
+if ! type tmux > /dev/null; then
+  pacin tmux
+fi
+if ! type which > /dev/null; then
+  chsh -s $(which zsh)
+  sudo chsh -s $(which zsh)
+else
+  chsh -s /bin/zsh
+  sudo chsh -s /bin/zsh
+fi
 
 #cd ~/.vim
 #git submodule init
