@@ -92,12 +92,18 @@ ln -s $vimrc $vimrcDestination
 ln -s $vimDir $vimDirDestination
 ln -s $vimDir $nvimDirDestination
 ln -s $tmux $tmuxDestination
-ln -s $zsh $zshrcDestination
+ln -s $zshrc $zshrcDestination
 ln -s $ohmyzshDir $ohmyzshDestination
 
-mkdir $vimDir/swaps
-mkdir $vimDir/backups
-mkdir $vimDir/undo
+if [ ! -d $vimDir/swaps ]; then 
+  mkdir $vimDir/swaps
+fi
+if [ ! -d $vimDir/backups ]; then 
+  mkdir $vimDir/backups
+fi
+if [ ! -d $vimDir/undo ]; then 
+  mkdir $vimDir/undo
+fi
 
 echo "\n vim, nvim, tmux, zsh, oh-my-zsh configration setup completed successfully \n"
 echo "\n updating repository to install required software \n"
