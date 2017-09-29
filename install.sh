@@ -8,7 +8,8 @@ vimDir=$rootDir/vim
 vimrc=$vimDir/vimrc
 nvimrc=$vimDir/init.vim
 zshDir=$rootDir/zsh
-tmux=$rootDir/tmux/tmux.conf
+tmuxDir=$rootDir/tmux
+tmuxFile=$tmuxDir/tmux.conf
 zshDir=$rootDir/zsh
 zshrc=$zshDir/zshrc
 backupDir=$rootDir/oldbackup
@@ -78,8 +79,8 @@ fi
 if [ -d $nvimDirDestination ]; then 
   mv $nvimDirDestination $backupDir/nvim
 fi
-if [ -f $tmux ]; then 
-  mv $tmux $backupDir/tmux.conf
+if [ -f $tmuxDestination ]; then 
+  mv $tmuxDestination $backupDir/tmux.conf
 fi
 if [ -f $zshrcDestination ]; then 
   mv $zshrcDestination $backupDir/zshrc
@@ -91,7 +92,7 @@ fi
 ln -s $vimrc $vimrcDestination
 ln -s $vimDir $vimDirDestination
 ln -s $vimDir $nvimDirDestination
-ln -s $tmux $tmuxDestination
+ln -s $tmuxFile $tmuxDestination
 ln -s $zshrc $zshrcDestination
 ln -s $ohmyzshDir $ohmyzshDestination
 
