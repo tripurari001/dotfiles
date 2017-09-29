@@ -24,15 +24,15 @@ nvimrcDestination=$nvimDirDestination/init.vim
 
 # for error handling in case package manager
 # not found
-alias pacup='echo "package manager not found"'
-alias pacin='echo'
-if type apt-get >> /dev/null; then
-  alias pacup='sudo apt-get update'
-  alias pacin='sudo apt-get install'
+pacup='echo "package manager not found"'
+pacin='echo'
+if hash apt-get > /dev/null; then
+  pacup='sudo apt-get update'
+  pacin='sudo apt-get install'
 else
-  if type zypper >> /dev/null; then
-    alias pacup='sudo zypper refresh'
-    alias pacin='sudo zypper install'
+  if hash zypper > /dev/null; then
+    pacup='sudo zypper refresh'
+    pacin='sudo zypper install'
   fi
 fi
 
@@ -103,17 +103,18 @@ echo "\n vim, nvim, tmux, zsh, oh-my-zsh configration setup completed successful
 echo "\n updating repository to install required software \n"
 sleep 2s
 
-pacup
-if ! type zsh > /dev/null; then
-  pacin zsh
+$pacup
+
+if ! hash zsh > /dev/null; then
+  $pacin zsh
 fi
-if ! type vim > /dev/null; then
-  pacin vim
+if ! hash vim > /dev/null; then
+  $pacin vim
 fi
-if ! type tmux > /dev/null; then
-  pacin tmux
+if ! hash tmux > /dev/null; then
+  $pacin tmux
 fi
-if ! type which > /dev/null; then
+if ! hash which > /dev/null; then
   chsh -s $(which zsh)
   sudo chsh -s $(which zsh)
 else
