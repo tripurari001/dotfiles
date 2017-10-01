@@ -70,6 +70,17 @@ sleep 2s
 
 mkdir $backupDir
 
+echo "initialling git submodule "
+
+if ! hash git > /dev/null; then
+  echo "git not found trying to install"
+  pacup 
+  pacin git
+fi
+
+git submodule init
+git submodule update
+
 if [ -f $vimrcDestination ]; then 
   mv $vimrcDestination $backupDir/vimrc
 fi
