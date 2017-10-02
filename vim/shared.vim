@@ -31,6 +31,12 @@ set linebreak
 
 "color scheme
 set t_Co=256
+"set background=dark
+if has("nvim")
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+set termguicolors
+colorscheme deep-space
 
 " Highlight current line
 set cursorline

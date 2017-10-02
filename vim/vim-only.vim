@@ -40,7 +40,3 @@ set undodir=~/.trippcconfig/vim/undo
 "########### need modification if used in neovim ########
 "########### need modification if used in neovim ########
 
-"Color scheme setup
-"set background=dark
-set termguicolors
-colorscheme deep-space
