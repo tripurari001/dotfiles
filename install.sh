@@ -30,11 +30,14 @@ pacin='echo'
 if hash apt-get > /dev/null; then
   pacup='sudo apt-get update'
   pacin='sudo apt-get install'
-else
-  if hash zypper > /dev/null; then
-    pacup='sudo zypper refresh'
-    pacin='sudo zypper install'
-  fi
+fi
+if hash zypper > /dev/null; then
+  pacup='sudo zypper refresh'
+  pacin='sudo zypper install'
+fi
+if hash brew > /dev/null; then
+  pacup='brew doctor'
+  pacin='brew install'
 fi
 
 echo ""
