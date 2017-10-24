@@ -34,8 +34,8 @@ set linebreak
 set t_Co=256
 if has("nvim")
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  set termguicolors
 endif
-set termguicolors
 colorscheme onedark
 
 " Highlight current line
