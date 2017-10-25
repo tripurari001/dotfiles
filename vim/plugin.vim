@@ -35,7 +35,7 @@ Plug 'Glench/Vim-Jinja2-Syntax', {'for': ['jinja', 'twig']}
 Plug 'rust-lang/rust.vim', {'for': ['rs']}
 
 "emmet for vim
-Plug 'mattn/emmet-vim', {'for': ['jinja', 'html', 'javascript', 'htm', 'shtml', 'stm', 'twig']}
+Plug 'mattn/emmet-vim', {'for': ['jinja', 'html', 'javascript', 'htm', 'shtml', 'stm', 'twig', 'erb']}
 
 "file finder ctrlP
 Plug 'ctrlpvim/ctrlp.vim'
