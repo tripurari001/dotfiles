@@ -19,6 +19,9 @@ Plug 'tpope/vim-surround'
 "javascript support
 Plug 'pangloss/vim-javascript'
 
+"Rails vim support
+Plug 'tpope/vim-rails'
+
 "JSX support
 Plug 'mxw/vim-jsx'
 
