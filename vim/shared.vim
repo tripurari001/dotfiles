@@ -1,6 +1,9 @@
 " update screen only when needed
 set lazyredraw
 
+" Set Leader key to ','
+let g:mapleader=','
+
 " show cursor position on status line 
 set ruler
 
