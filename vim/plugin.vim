@@ -7,9 +7,6 @@ call plug#begin('~/.trippcconfig/vim/plugged')
 " ColorScheme
 Plug 'rafi/awesome-vim-colorschemes'
 
-" ColorScheme 2
-"Plug 'chriskempson/base16-vim'
-
 "make status line cool
 Plug 'vim-airline/vim-airline'
 
@@ -19,14 +16,11 @@ Plug 'tpope/vim-surround'
 "javascript support
 Plug 'pangloss/vim-javascript'
 
-"Rails vim support
-Plug 'tpope/vim-rails'
-
 "JSX support
 Plug 'mxw/vim-jsx'
 
 "Comment support
-Plug 'tpope/vim-commentary'
+Plug 'scrooloose/nerdcommenter'
 
 "auto pairs
 Plug 'jiangmiao/auto-pairs'

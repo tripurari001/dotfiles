@@ -32,10 +32,6 @@ set linebreak
 "color scheme
 "set background=dark
 set t_Co=256
-"if has("nvim")
-"  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"  set termguicolors
-"endif
 colorscheme onedark
 
 " Highlight current line
@@ -47,7 +43,7 @@ set sidescrolloff=5
 
 " for key mapping time wait
 set ttimeout
-set ttimeoutlen=200
+set ttimeoutlen=300
 
 " utf-8 charset
 set encoding=utf-8 nobomb
@@ -78,7 +74,3 @@ set wildignore+=*/smarty/*,*/vendor/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,
 
 " twig template highlighting jinja 
 autocmd BufNewFile,BufRead *.twig set ft=jinja
-
-"Set comment string
-"autocmd BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm setlocal commentstring=<!--\ %s\ -->
-autocmd BufNewFile,BufRead *.twig setlocal commentstring={#\ %s\ #}
