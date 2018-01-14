@@ -7,6 +7,9 @@ call plug#begin('~/.trippcconfig/vim/plugged')
 " ColorScheme
 Plug 'rafi/awesome-vim-colorschemes'
 
+" The one and only NerdTree
+Plug 'scrooloose/nerdtree'
+
 "make status line cool
 Plug 'vim-airline/vim-airline'
 
