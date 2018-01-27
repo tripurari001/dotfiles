@@ -2,6 +2,7 @@
 set lazyredraw
 
 " Set Leader key to ','
+let mapleader = ","
 let g:mapleader=','
 
 " show cursor position on status line 
@@ -18,6 +19,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set smartindent
 
 " Turn on line numbering. Turn it off with 'set nonumber'
 set number
@@ -55,7 +57,7 @@ set encoding=utf-8 nobomb
 set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_
 
 " turn on spelling check
-set spell
+"set spell
 
 " show the current mode
 set showmode
@@ -77,3 +79,34 @@ set wildignore+=*/smarty/*,*/vendor/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,
 
 " twig template highlighting jinja 
 autocmd BufNewFile,BufRead *.twig set ft=jinja
+
+"$$$$$$$$$$$$$$$$$$$$ shortcuts $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+
+"Remap j and k to act as expected when used on long, wrapped, lines
+nnoremap j gj
+nnoremap k gk
+
+"Quick yanking to the end of the line
+nnoremap Y y$
+
+" NERDTree settings
+nnoremap <leader>d :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
+
+"Toggle spell check
+map <leader>ss :set spell!<cr>
+
+"clearing highlighted search
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" Switch between the last two files
+nnoremap <Leader><Leader> <C-^>
+
+"$$$$$$$$$$$$$$$$$$$$ shortcuts end $$$$$$$$$$$$$$$$$$$$$$$$$$$$
