@@ -5,3 +5,6 @@ let g:jsx_ext_required = 0
 
 " use powerline font in status line
 let g:airline_powerline_fonts = 1
+
+" Show hidden files in NerdTree
+let NERDTreeShowHidden=1
