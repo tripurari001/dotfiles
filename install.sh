@@ -14,6 +14,7 @@ zshDir=$rootDir/zsh
 zshrc=$zshDir/zshrc
 backupDir=$rootDir/oldbackup
 ohmyzshDir=$zshDir/oh-my-zsh
+ctagsFile=$rootDir/ctags/ctags
 
 ohmyzshDestination=~/.oh-my-zsh
 tmuxDestination=~/.tmux.conf
@@ -22,6 +23,7 @@ vimrcDestination=~/.vimrc
 vimDirDestination=~/.vim
 nvimDirDestination=~/.config/nvim
 nvimrcDestination=$nvimDirDestination/init.vim
+ctagsDestination=~/.ctags
 
 # for error handling in case package manager
 # not found
@@ -102,6 +104,9 @@ fi
 if [ -d $ohmyzshDestination ]; then 
   mv $ohmyzshDestination $backupDir/oh-my-zsh
 fi
+if [ -d $ctagsDestination ]; then 
+  mv $ctagsDestination $backupDir/ctags
+fi
 
 ln -s $vimrc $vimrcDestination
 ln -s $vimDir $vimDirDestination
@@ -109,6 +114,7 @@ ln -s $vimDir $nvimDirDestination
 ln -s $tmuxFile $tmuxDestination
 ln -s $zshrc $zshrcDestination
 ln -s $ohmyzshDir $ohmyzshDestination
+ln -s $ctagsFile $ctagsDestination
 
 if [ ! -d $vimDir/swaps ]; then 
   mkdir $vimDir/swaps
@@ -134,6 +140,9 @@ if ! hash vim > /dev/null; then
 fi
 if ! hash tmux > /dev/null; then
   $pacin tmux
+fi
+if ! hash ctags > /dev/null; then
+  $pacin ctags
 fi
 if ! hash which > /dev/null; then
   chsh -s $(which zsh)
