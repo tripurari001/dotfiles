@@ -43,5 +43,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 "fugutive vim
 Plug 'tpope/vim-fugitive'
 
+"ALE Async Linting Engine
+Plug 'w0rp/ale'
+
 " Initialize plugin system
 call plug#end()
