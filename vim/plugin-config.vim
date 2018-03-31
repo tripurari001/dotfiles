@@ -8,3 +8,10 @@ let g:airline_powerline_fonts = 1
 
 " Show hidden files in NerdTree
 let NERDTreeShowHidden=1
+
+
+"############# ALE Config #############
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = 'xx'
+let g:ale_sign_warning = '!!'
+"############# ALE Config end #############
