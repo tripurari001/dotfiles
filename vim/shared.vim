@@ -109,4 +109,9 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
 
+" command mode complition with <C-p> and <C-n>
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
+
 "$$$$$$$$$$$$$$$$$$$$ shortcuts end $$$$$$$$$$$$$$$$$$$$$$$$$$$$
