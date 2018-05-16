@@ -14,7 +14,7 @@ zshDir=$rootDir/zsh
 zshrc=$zshDir/zshrc
 backupDir=$rootDir/oldbackup
 ohmyzshDir=$zshDir/oh-my-zsh
-ctagsFile=$rootDir/ctags/ctags
+ctagsFile=$rootDir/ctags/config.ctags
 
 ohmyzshDestination=~/.oh-my-zsh
 tmuxDestination=~/.tmux.conf
@@ -23,7 +23,8 @@ vimrcDestination=~/.vimrc
 vimDirDestination=~/.vim
 nvimDirDestination=~/.config/nvim
 nvimrcDestination=$nvimDirDestination/init.vim
-ctagsDestination=~/.ctags
+ctagsDestinationDir=~/.ctags.d
+ctagsDestination=$ctagsDestinationDir/config.ctags
 
 # for error handling in case package manager
 # not found
@@ -104,8 +105,14 @@ fi
 if [ -d $ohmyzshDestination ]; then 
   mv $ohmyzshDestination $backupDir/oh-my-zsh
 fi
-if [ -d $ctagsDestination ]; then 
-  mv $ctagsDestination $backupDir/ctags
+if [ -f $ctagsDestination ]; then 
+  mv $ctagsDestination $backupDir/config.ctags
+fi
+
+
+
+if [ ! -d $ctagsDestinationDir ]; then 
+  mkdir $ctagsDestinationDir
 fi
 
 ln -s $vimrc $vimrcDestination
