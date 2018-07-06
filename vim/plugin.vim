@@ -5,7 +5,7 @@
 call plug#begin('~/.trippcconfig/vim/plugged')
 
 " ColorScheme
-Plug 'rafi/awesome-vim-colorschemes'
+Plug 'ayu-theme/ayu-vim'
 
 " The one and only NerdTree
 Plug 'scrooloose/nerdtree'

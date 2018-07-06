@@ -1,10 +1,6 @@
 " update screen only when needed
 set lazyredraw
 
-" Set Leader key to ','
-let mapleader = ","
-let g:mapleader=','
-
 " show cursor position on status line 
 set ruler
 
@@ -37,7 +33,8 @@ set linebreak
 "color scheme
 set t_Co=256
 set termguicolors
-colorscheme onedark
+let ayucolor="mirage" " for mirage version of theme
+colorscheme ayu
 
 " Highlight current line
 set cursorline
@@ -81,6 +78,10 @@ set wildignore+=*/smarty/*,*/vendor/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,
 autocmd BufNewFile,BufRead *.twig set ft=jinja
 
 "$$$$$$$$$$$$$$$$$$$$ shortcuts $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+" Set Leader key to ','
+let mapleader = ","
+let g:mapleader=','
 
 " Smart way to move between windows
 map <C-j> <C-W>j
