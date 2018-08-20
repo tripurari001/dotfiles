@@ -77,6 +77,9 @@ set wildignore+=*/smarty/*,*/vendor/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,
 " twig template highlighting jinja 
 autocmd BufNewFile,BufRead *.twig set ft=jinja
 
+" use par to format text whitch is better than vim's internal formatter
+set formatprg=par
+
 "$$$$$$$$$$$$$$$$$$$$ shortcuts $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 " Set Leader key to ','
