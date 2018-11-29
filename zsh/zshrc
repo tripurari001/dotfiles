@@ -92,6 +92,13 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
+# Enable Vim mode in ZSH
+bindkey -v
+
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^E' edit-command-line                   # Opens Vim to edit current command line
+
 # ctrl + p, and ctrl + n behave same as up and down arrow
 bindkey "^P" up-line-or-beginning-search
 bindkey "^n" down-line-or-beginning-search
