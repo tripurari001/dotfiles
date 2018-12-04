@@ -15,6 +15,7 @@ zshrc=$zshDir/zshrc
 backupDir=$rootDir/oldbackup
 ohmyzshDir=$zshDir/oh-my-zsh
 ctagsFile=$rootDir/ctags/config.ctags
+alacritty=$rootDir/alacritty
 
 ohmyzshDestination=~/.oh-my-zsh
 tmuxDestination=~/.tmux.conf
@@ -25,6 +26,7 @@ nvimDirDestination=~/.config/nvim
 nvimrcDestination=$nvimDirDestination/init.vim
 ctagsDestinationDir=~/.ctags.d
 ctagsDestination=$ctagsDestinationDir/config.ctags
+alacrittyDestination=~/.config/alacritty
 
 # for error handling in case package manager
 # not found
@@ -108,9 +110,9 @@ fi
 if [ -f $ctagsDestination ]; then 
   mv $ctagsDestination $backupDir/config.ctags
 fi
-
-
-
+if [ -d $alacrittyDestination ]; then 
+  mv $alacrittyDestination $backupDir/alacritty
+fi
 if [ ! -d $ctagsDestinationDir ]; then 
   mkdir $ctagsDestinationDir
 fi
@@ -122,6 +124,7 @@ ln -s $tmuxFile $tmuxDestination
 ln -s $zshrc $zshrcDestination
 ln -s $ohmyzshDir $ohmyzshDestination
 ln -s $ctagsFile $ctagsDestination
+ln -s $alacritty $alacrittyDestination
 
 if [ ! -d $vimDir/swaps ]; then 
   mkdir $vimDir/swaps
