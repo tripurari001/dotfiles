@@ -41,7 +41,7 @@ if hash zypper > /dev/null; then
   pacin='sudo zypper install'
 fi
 if hash brew > /dev/null; then
-  pacup='brew doctor'
+  pacup='brew update'
   pacin='brew install'
 fi
 
