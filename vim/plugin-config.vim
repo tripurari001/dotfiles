@@ -10,7 +10,7 @@ let g:airline_powerline_fonts = 1
 let NERDTreeShowHidden=1
 
 " Emmet configration
-let g:user_emmet_mode='i';
+let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-E>'
 
 
