@@ -9,9 +9,12 @@ let g:airline_powerline_fonts = 1
 " Show hidden files in NerdTree
 let NERDTreeShowHidden=1
 
-" Emmet configration
+" Emmet configuration
 let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-E>'
+
+" Mu-completer settings
+set completeopt+=menuone,noinsert   " show menu for even 1 option and do not auto insert suggestions 
 
 
 "############# ALE Config #############

@@ -46,5 +46,8 @@ Plug 'tpope/vim-fugitive'
 "ALE Async Linting Engine
 Plug 'w0rp/ale'
 
+" Mu-Complete for autocomplete
+Plug 'lifepillar/vim-mucomplete'
+
 " Initialize plugin system
 call plug#end()
