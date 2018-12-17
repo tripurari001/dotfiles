@@ -14,7 +14,7 @@ let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-E>'
 
 " Mu-completer settings
-set completeopt+=menuone,noinsert   " show menu for even 1 option and do not auto insert suggestions 
+set completeopt+=menuone,noinsert,noselect   " show menu for even 1 option and do not auto insert suggestions 
 
 
 "############# ALE Config #############
