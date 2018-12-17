@@ -67,6 +67,7 @@ set splitright
 
 " Character for CLI expansion (TAB-completion)
 set wildchar=<TAB> 
+set wildignorecase
 
 " ignore some system and temp file 
 set wildignore+=.DS_Store
