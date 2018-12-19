@@ -127,9 +127,9 @@ cnoremap <C-n> <Down>
 "$$$$$$$$$$$$$$$$$$$$ color scheme for diff mode $$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 highlight DiffAdd    cterm=bold ctermfg=0    ctermbg=2    gui=bold    guifg=#232834 guibg=#A6CC70
-highlight DiffDelete cterm=bold ctermfg=0    ctermbg=11   gui=bold    guifg=#232834 guibg=#F27983
-highlight DiffChange cterm=none ctermfg=none ctermbg=none gui=none    guifg=none    guibg=none
-highlight DiffText   cterm=none ctermfg=5    ctermbg=32   gui=none    guifg=#232834 guibg=#77A8D9
+highlight DiffDelete cterm=bold ctermfg=0    ctermbg=203  gui=bold    guifg=#232834 guibg=#F27983
+highlight DiffChange cterm=bold ctermfg=0    ctermbg=11   gui=bold    guifg=#232834 guibg=#FFCC66
+highlight DiffText   cterm=bold ctermfg=0    ctermbg=32   gui=bold    guifg=#232834 guibg=#77A8D9
 
 
 "    cterm - sets the style
