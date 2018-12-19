@@ -120,3 +120,24 @@ cnoremap <C-n> <Down>
 
 
 "$$$$$$$$$$$$$$$$$$$$ shortcuts end $$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+
+
+"$$$$$$$$$$$$$$$$$$$$ color scheme for diff mode $$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+highlight DiffAdd    cterm=bold ctermfg=0    ctermbg=2    gui=bold    guifg=#232834 guibg=#A6CC70
+highlight DiffDelete cterm=bold ctermfg=0    ctermbg=11   gui=bold    guifg=#232834 guibg=#F27983
+highlight DiffChange cterm=none ctermfg=none ctermbg=none gui=none    guifg=none    guibg=none
+highlight DiffText   cterm=none ctermfg=5    ctermbg=32   gui=none    guifg=#232834 guibg=#77A8D9
+
+
+"    cterm - sets the style
+"    ctermfg - set the text color
+"    ctermbg - set the highlighting
+"    DiffAdd - line was added
+"    DiffDelete - line was removed
+"    DiffChange - part of the line was changed (highlights the whole line)
+"    DiffText - the exact part of the line that changed
+
+"$$$$$$$$$$$$$$$$$$$$ color scheme for diff mode end $$$$$$$$$$$$$$$$$$$$$$$$$$$$
