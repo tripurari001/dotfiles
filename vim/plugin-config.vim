@@ -21,4 +21,13 @@ set completeopt+=menuone,noinsert,noselect   " show menu for even 1 option and d
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = 'xx'
 let g:ale_sign_warning = '!!'
+
+"let g:ale_fixers = {
+"\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+"\   'javascript': ['prettier', 'eslint'],
+"\}
+
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
 "############# ALE Config end #############
