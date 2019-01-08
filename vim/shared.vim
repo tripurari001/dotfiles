@@ -32,7 +32,6 @@ set linebreak
 
 "color scheme
 set t_Co=256
-set termguicolors
 let ayucolor="mirage" " for mirage version of theme
 colorscheme ayu
 
