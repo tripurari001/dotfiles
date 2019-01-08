@@ -1,21 +1,22 @@
 #!/bin/bash
 
 # this is install script for vim, zsh and tmux 
-# if you want to Uninstall then please run uninstall.sh 
+# supported on linux and unix platform only
 
+
+# path variables to use
 rootDir=~/.trippcconfig
 vimDir=$rootDir/vim
 vimrc=$vimDir/vimrc
 nvimrc=$vimDir/init.vim
-zshDir=$rootDir/zsh
 tmuxDir=$rootDir/tmux
 tmuxFile=$tmuxDir/tmux.conf
 zshDir=$rootDir/zsh
 zshrc=$zshDir/zshrc
-backupDir=$rootDir/oldbackup
 ohmyzshDir=$zshDir/oh-my-zsh
 ctagsFile=$rootDir/ctags/config.ctags
 alacritty=$rootDir/alacritty
+backupDir=$rootDir/oldbackup
 
 ohmyzshDestination=~/.oh-my-zsh
 tmuxDestination=~/.tmux.conf
@@ -28,22 +29,62 @@ ctagsDestinationDir=~/.ctags.d
 ctagsDestination=$ctagsDestinationDir/config.ctags
 alacrittyDestination=~/.config/alacritty
 
-# for error handling in case package manager
-# not found
-pacup='echo "package manager not found"'
-pacin='echo'
+# for error handling in case package manager not found
+
 if hash apt-get > /dev/null; then
   pacup='sudo apt-get update'
   pacin='sudo apt-get install'
-fi
-if hash zypper > /dev/null; then
+elif hash zypper > /dev/null; then
   pacup='sudo zypper refresh'
   pacin='sudo zypper install'
-fi
-if hash brew > /dev/null; then
+elif hash brew > /dev/null; then
   pacup='brew update'
   pacin='brew install'
+else
+  echo 'no package manager found brew or apt-get or zypper'
+  echo 'aborting the installation...'
+  exit
 fi
+
+echo "updating package manager repo-cache"
+$pacup
+
+# 1st param package name to install
+# 2nd param command to check that package
+# if 2nd params is empty use 1st parm as command
+install_if_not_already() {
+  if [ -z $2 ]; then
+    command_to_run=$1
+  else
+    command_to_run=$2
+  fi
+
+  if ! hash $command_to_run > /dev/null; then
+    echo ""
+    echo "installing:$1"
+    echo ""
+    $pacin $1
+  else
+    echo ""
+    echo "$1 is already installed"
+    echo ""
+  fi
+}
+
+# 1st param source
+# 2nd param backup destination
+take_backup() {
+  if [ -f $1 ]; then 
+    mv $1 $backupDir/$2
+  fi
+}
+
+# 1st param folder address
+create_dir_if_not_already() {
+  if [ ! -d $1 ]; then 
+    mkdir $1
+  fi
+}
 
 echo ""
 echo "                                 ########  ##    ##  "
@@ -61,61 +102,51 @@ echo "    ##    ########   ##  ########  ##     ## ########  ##     ## ######## 
 echo "    ##    ##   ##    ##  ##        ##     ## ##   ##   ######### ##   ##    ##  "
 echo "    ##    ##    ##   ##  ##        ##     ## ##    ##  ##     ## ##    ##   ##  "
 echo "    ##    ##     ## #### ##         #######  ##     ## ##     ## ##     ## #### "
-echo "\n"
-echo "please wait 2 sec \n"
+echo ""
+echo ""
+echo "please wait 2 sec"
+echo ""
 sleep 2s
 
 if [ ! -d ~/.trippcconfig ]; then
-  echo "\n ~/.trippcconfig directory not found \n Aborting the installation"
+  echo ""
+  echo "~/.trippcconfig directory not found"
+  echo " Aborting the installation..."
+  echo ""
   sleep 2s
   exit;
 fi
 
-echo "you can find your old configuration in $backupDir directory \n"
+echo ""
+echo "you can find your old configuration in $backupDir directory"
+echo ""
 
-echo "Installing new vim, nvim, tmux, zsh, oh-my-zsh  configuration \n"
+echo ""
+echo "Installing new vim, nvim, tmux, zsh, oh-my-zsh  configuration"
+echo ""
 sleep 2s
 
 mkdir $backupDir
 
-echo "initialling git submodule "
-
-if ! hash git > /dev/null; then
-  echo "git not found trying to install"
-  pacup 
-  pacin git
-fi
+install_if_not_already git
 
 git submodule init
 git submodule update
 
-if [ -f $vimrcDestination ]; then 
-  mv $vimrcDestination $backupDir/vimrc
-fi
-if [ -d $vimDirDestination ]; then 
-  mv $vimDirDestination $backupDir/vim
-fi
-if [ -d $nvimDirDestination ]; then 
-  mv $nvimDirDestination $backupDir/nvim
-fi
-if [ -f $tmuxDestination ]; then 
-  mv $tmuxDestination $backupDir/tmux.conf
-fi
-if [ -f $zshrcDestination ]; then 
-  mv $zshrcDestination $backupDir/zshrc
-fi
-if [ -d $ohmyzshDestination ]; then 
-  mv $ohmyzshDestination $backupDir/oh-my-zsh
-fi
-if [ -f $ctagsDestination ]; then 
-  mv $ctagsDestination $backupDir/config.ctags
-fi
-if [ -d $alacrittyDestination ]; then 
-  mv $alacrittyDestination $backupDir/alacritty
-fi
-if [ ! -d $ctagsDestinationDir ]; then 
-  mkdir $ctagsDestinationDir
-fi
+take_backup $vimrcDestination vimrc
+take_backup $vimDirDestination vim
+take_backup $nvimDirDestination nvim
+take_backup $tmuxDestination tmux.conf
+take_backup $zshrcDestination zshrc
+take_backup $ohmyzshDestination oh-my-zsh
+take_backup $ctagsDestination config.ctags
+take_backup $alacrittyDestination alacritty
+
+create_dir_if_not_already ~/.config
+create_dir_if_not_already $ctagsDestinationDir
+create_dir_if_not_already $vimDir/swaps
+create_dir_if_not_already $vimDir/backups
+create_dir_if_not_already $vimDir/undo
 
 ln -s $vimrc $vimrcDestination
 ln -s $vimDir $vimDirDestination
@@ -126,34 +157,21 @@ ln -s $ohmyzshDir $ohmyzshDestination
 ln -s $ctagsFile $ctagsDestination
 ln -s $alacritty $alacrittyDestination
 
-if [ ! -d $vimDir/swaps ]; then 
-  mkdir $vimDir/swaps
-fi
-if [ ! -d $vimDir/backups ]; then 
-  mkdir $vimDir/backups
-fi
-if [ ! -d $vimDir/undo ]; then 
-  mkdir $vimDir/undo
-fi
 
-echo "\n vim, nvim, tmux, zsh, oh-my-zsh configration setup completed successfully \n"
-echo "\n updating repository to install required software \n"
-sleep 2s
+echo ""
+echo " vim, nvim, tmux, zsh, oh-my-zsh configration setup completed successfully..."
+echo ""
 
-$pacup
+install_if_not_already zsh
+install_if_not_already vim
+install_if_not_already tmux
+install_if_not_already ctags
 
-if ! hash zsh > /dev/null; then
-  $pacin zsh
-fi
-if ! hash vim > /dev/null; then
-  $pacin vim
-fi
-if ! hash tmux > /dev/null; then
-  $pacin tmux
-fi
-if ! hash ctags > /dev/null; then
-  $pacin ctags
-fi
+echo ""
+echo "changing the default shell to zsh"
+echo "please enter root password in required"
+echo ""
+
 if ! hash which > /dev/null; then
   chsh -s $(which zsh)
   sudo chsh -s $(which zsh)
@@ -161,10 +179,6 @@ else
   chsh -s /bin/zsh
   sudo chsh -s /bin/zsh
 fi
-
-#cd ~/.vim
-#git submodule init
-#git submodule update
 
 #  while true; do
 #    read -p " do you want to continue ? (y/n)" yn
@@ -174,43 +188,3 @@ fi
 #      * ) echo "Please answer yes or no.";
 #    esac
 #  done
-
-#echo "making backup of old vim configration in oldVimBackup folder"
-#
-#sleep 1s 
-#
-#cd ~
-#
-#if [ ! -d ~/oldVimBackup ]; then 
-#  mkdir ~/oldVimBackup
-#else
-#  echo "  A backup folder HOME/oldVimBackup already exists"
-#  while true; do
-#    read -p "Do you want to delete it (y/n) " yn
-#    case $yn in
-#      [Yy]* ) rm -r ~/oldVimBackup ; break;;
-#      [Nn]* ) echo "please rename oldVimBackup folder and retry" ; exit;;
-#      * ) echo "Please answer yes or no.";
-#    esac
-#  done
-#fi
-#
-#command -v git >/dev/null 2>&1 || { echo >&2 "Git is not installed please install git first.  Aborting."; sleep 1; exit 1; }
-#
-#if [ -f ~/.vimrc ]; then 
-#  mv ~/.vimrc ~/oldVimBackup/vimrc
-#fi
-#
-#if [ -d ~/.vim ]; then 
-#  mv ~/.vim ~/oldVimBackup/vim/
-#fi
-
-#if [ -d ~/.vimrc ]; then 
-#  if [ -L ~/.vimrc ]; then
-#    echo "this is a link"
-#    #rm "$LINK_OR_DIR"
-#  else
-#    echo "this is a directory"
-#    #rmdir 
-#  fi
-#fi
