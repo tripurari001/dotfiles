@@ -5,7 +5,7 @@
 call plug#begin('~/.trippcconfig/vim/plugged')
 
 " ColorScheme
-Plug 'joshdick/onedark.vim'
+Plug 'rakr/vim-one'
 
 " The one and only NerdTree
 Plug 'scrooloose/nerdtree'
