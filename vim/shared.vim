@@ -37,8 +37,9 @@ set nowrap
 
 "color scheme
 set t_Co=256
-let ayucolor="mirage" " for mirage version of theme
-colorscheme ayu
+set background=dark        " for the light version
+let g:one_allow_italics = 1 " I love italic for comments
+colorscheme one
 
 " Highlight current line
 set cursorline
