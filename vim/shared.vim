@@ -94,8 +94,12 @@ set formatprg=par
 
 if has('persistent_undo')
   set undofile
-  set undodir=~/.trippcconfig/vim/undo
 endif
+
+" Centralize backups, swapfiles and undo history
+set backupdir=~/.trippcconfig/vim/backups
+set directory=~/.trippcconfig/vim/swaps
+set undodir=~/.trippcconfig/vim/undo
 
 "$$$$$$$$$$$$$$$$$$$$ shortcuts $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 

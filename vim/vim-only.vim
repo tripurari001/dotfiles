@@ -28,15 +28,3 @@ set laststatus=2
 set ttyfast
 " visual autocomplete for command menu
 set wildmenu
-
-"########### need modification if used in neovim ########
-"########### need modification if used in neovim ########
-"########### need modification if used in neovim ########
-" Centralize backups, swapfiles and undo history
-set backupdir=~/.trippcconfig/vim/backups
-set directory=~/.trippcconfig/vim/swaps
-set undodir=~/.trippcconfig/vim/undo
-"########### need modification if used in neovim ########
-"########### need modification if used in neovim ########
-"########### need modification if used in neovim ########
-

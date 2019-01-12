@@ -1,4 +1,7 @@
 /vim/plugged/
+/vim/undo/
+/vim/swaps/
+/vim/backups/
 /oldbackup/
 /vim/.netrwhist
 .DS_Store
