@@ -22,8 +22,8 @@ Plug 'pangloss/vim-javascript'
 "JSX support
 Plug 'mxw/vim-jsx'
 
-"Comment support
-Plug 'scrooloose/nerdcommenter'
+" " Comment out code easily
+Plug 'tpope/vim-commentary'
 
 "auto pairs
 Plug 'jiangmiao/auto-pairs'

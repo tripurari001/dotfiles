@@ -1,6 +1,9 @@
 " update screen only when needed
 set lazyredraw
 
+" allow emojis in vimrc
+scriptencoding utf-16
+
 " show cursor position on status line 
 set ruler
 
@@ -16,10 +19,12 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set smartindent
+set shiftround       " Round indent to multiple of 'shiftwidth'
 
 " Turn on line numbering. Turn it off with 'set nonumber'
 set number
 set relativenumber
+set numberwidth=1
 
 " Show the (partial) command as it’s being typed
 set showcmd
@@ -27,8 +32,8 @@ set showcmd
 " Case insensitive search
 set ignorecase
 
-" Wrap text instead of being on one line
-set linebreak
+" Don't Wrap text instead show in one line
+set nowrap
 
 "color scheme
 set t_Co=256
@@ -58,11 +63,17 @@ set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_
 " show the current mode
 set showmode
 
+" treat dash separated words as a word text object
+set iskeyword+=-
+
 " New window goes below
 set splitbelow
 
 " New windows goes right
 set splitright
+
+" Always use vertical diffs
+set diffopt+=vertical
 
 " Character for CLI expansion (TAB-completion)
 set wildchar=<TAB> 
@@ -80,11 +91,19 @@ autocmd BufNewFile,BufRead *.twig set ft=jinja
 " use par to format text whitch is better than vim's internal formatter
 set formatprg=par
 
+if has('persistent_undo')
+  set undofile
+  set undodir=~/.trippcconfig/vim/undo
+endif
+
 "$$$$$$$$$$$$$$$$$$$$ shortcuts $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-" Set Leader key to ','
-let mapleader = ","
-let g:mapleader=','
+" Set Leader key to '\'
+let g:mapleader="\\"
+
+" alias for leader key
+nmap <space> \
+xmap <space> \
 
 " Smart way to move between windows
 map <C-j> <C-W>j
@@ -116,6 +135,27 @@ nnoremap <Leader><Leader> <C-^>
 " command mode complition with <C-p> and <C-n>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+
+" Tab/shift-tab to indent/outdent in visual mode.
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
+" Keep selection when indenting/outdenting.
+vnoremap > >gv
+vnoremap < <gv
+
+" Search for selected text
+vnoremap * "xy/<C-R>x<CR>
+
+" copy to system clipboard
+noremap gy "+y
+
+" command typo mapping
+cnoremap WQ wq
+cnoremap Wq wq
+cnoremap QA qa
+cnoremap qA qa
+cnoremap Q! q!
 
 
 "$$$$$$$$$$$$$$$$$$$$ shortcuts end $$$$$$$$$$$$$$$$$$$$$$$$$$$$
