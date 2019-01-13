@@ -16,6 +16,9 @@ zshrc=$zshDir/zshrc
 ohmyzshDir=$zshDir/oh-my-zsh
 ctagsFile=$rootDir/ctags/config.ctags
 alacritty=$rootDir/alacritty
+gitDir=$rootDir/gitconfigs
+gitconfig=$gitDir/gitconfig
+gitignore=$gitDir/gitignore
 backupDir=$rootDir/oldbackup
 
 ohmyzshDestination=~/.oh-my-zsh
@@ -28,6 +31,8 @@ nvimrcDestination=$nvimDirDestination/init.vim
 ctagsDestinationDir=~/.ctags.d
 ctagsDestination=$ctagsDestinationDir/config.ctags
 alacrittyDestination=~/.config/alacritty
+gitconfigDestination=~/.gitconfig
+gitignoreDestination=~/.gitignore
 
 # for error handling in case package manager not found
 
@@ -141,6 +146,8 @@ take_backup $zshrcDestination zshrc
 take_backup $ohmyzshDestination oh-my-zsh
 take_backup $ctagsDestination config.ctags
 take_backup $alacrittyDestination alacritty
+take_backup $gitignoreDestination gitignore
+take_backup $gitconfigDestination gitconfig
 
 create_dir_if_not_already ~/.config
 create_dir_if_not_already $ctagsDestinationDir
@@ -156,6 +163,8 @@ ln -s $zshrc $zshrcDestination
 ln -s $ohmyzshDir $ohmyzshDestination
 ln -s $ctagsFile $ctagsDestination
 ln -s $alacritty $alacrittyDestination
+ln -s $gitconfig $gitconfigDestination
+ln -s $gitignore $gitignoreDestination
 
 
 echo ""

@@ -1,0 +1,14 @@
+# This is Git's per-user configuration file.
+[color]
+  ui = true
+
+[core]
+  excludesfile = ~/.gitignore
+
+[diff]
+  algorithm = patience
+
+[user]
+# Please adapt and uncomment the following lines:
+  name = Tripurari Shankar
+  email = tripurari@ixigo.com

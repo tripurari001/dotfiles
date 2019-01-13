@@ -1,0 +1,10 @@
+.DS_Store
+tags
+tags.lock
+tags.temp
+!tags/
+tmp/**/*
+!tmp/cache/.keep
+vendor/bundle
+_build/
+.vscode/
