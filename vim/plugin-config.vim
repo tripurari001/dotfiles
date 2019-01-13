@@ -16,6 +16,12 @@ let g:user_emmet_leader_key='<C-E>'
 " Mu-completer settings
 set completeopt+=menuone,noinsert,noselect   " show menu for even 1 option and do not auto insert suggestions 
 
+" Order of complition method
+let g:mucomplete#chains.default  = ['path', 'c-p', 'omni', 'tags', 'spel']
+
+" Auto suggestion 
+let g:mucomplete#enable_auto_at_startup = 1
+
 
 "############# ALE Config #############
 let g:ale_sign_column_always = 1
