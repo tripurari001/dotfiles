@@ -17,7 +17,9 @@ let g:user_emmet_leader_key='<C-E>'
 set completeopt+=menuone,noinsert,noselect   " show menu for even 1 option and do not auto insert suggestions 
 
 " Order of complition method
-let g:mucomplete#chains.default  = ['path', 'c-p', 'omni', 'tags', 'spel']
+	let g:mucomplete#chains = {
+		\ 'default' : ['path', 'c-p', 'omni', 'tags']
+		\ }
 
 " Auto suggestion 
 let g:mucomplete#enable_auto_at_startup = 1
