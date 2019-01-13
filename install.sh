@@ -79,7 +79,7 @@ install_if_not_already() {
 # 1st param source
 # 2nd param backup destination
 take_backup() {
-  if [ -f $1 ]; then 
+  if [ -f $1 ] || [ -d $1 ]; then 
     mv $1 $backupDir/$2
   fi
 }
