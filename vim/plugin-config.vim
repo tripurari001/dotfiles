@@ -18,7 +18,7 @@ set completeopt+=menuone,noinsert,noselect   " show menu for even 1 option and d
 
 " Order of complition method
 	let g:mucomplete#chains = {
-		\ 'default' : ['path', 'c-p', 'omni', 'tags']
+		\ 'default' : ['path', 'c-n', 'omni', 'tags']
 		\ }
 
 " Auto suggestion 
