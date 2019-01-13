@@ -24,6 +24,8 @@ set completeopt+=menuone,noinsert,noselect   " show menu for even 1 option and d
 " Auto suggestion 
 let g:mucomplete#enable_auto_at_startup = 1
 
+let g:mucomplete#enable_auto_at_startup = 300
+
 
 "############# ALE Config #############
 let g:ale_sign_column_always = 1
