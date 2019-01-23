@@ -77,7 +77,7 @@ set splitright
 set diffopt+=vertical,iwhite
 
 " Toggle White-space Changes in diff
-nnoremap <leader>dw :call IwhiteToggle()<CR>
+nnoremap <leader>iw :call IwhiteToggle()<CR>
 function! IwhiteToggle()
   if &diffopt =~ 'iwhite'
     set diffopt-=iwhite
@@ -117,8 +117,8 @@ set undodir=~/.trippcconfig/vim/undo
 let g:mapleader="\\"
 
 " alias for leader key
-nnoremap <space> \
-xnoremap <space> \
+nmap <space> \
+xmap <space> \
 
 " Smart way to move between windows
 noremap <C-j> <C-W>j
