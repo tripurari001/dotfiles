@@ -74,7 +74,17 @@ set splitbelow
 set splitright
 
 " Always use vertical diffs
-set diffopt+=vertical
+set diffopt+=vertical,iwhite
+
+" Toggle White-space Changes in diff
+nnoremap <leader>dw :call IwhiteToggle()<CR>
+function! IwhiteToggle()
+  if &diffopt =~ 'iwhite'
+    set diffopt-=iwhite
+  else
+    set diffopt+=iwhite
+  endif
+endfunction
 
 " Character for CLI expansion (TAB-completion)
 set wildchar=<TAB> 
@@ -107,14 +117,14 @@ set undodir=~/.trippcconfig/vim/undo
 let g:mapleader="\\"
 
 " alias for leader key
-nmap <space> \
-xmap <space> \
+nnoremap <space> \
+xnoremap <space> \
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
 
 
 "Remap j and k to act as expected when used on long, wrapped, lines
@@ -129,10 +139,10 @@ nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
 
 "Toggle spell check
-map <leader>ss :set spell!<cr>
+noremap <leader>ss :set spell!<cr>
 
 "clearing highlighted search
-nmap <silent> <leader>/ :nohlsearch<CR>
+nnoremap <silent> <leader>/ :nohlsearch<CR>
 
 " Switch between the last two files
 nnoremap <tab><tab> <c-^>
