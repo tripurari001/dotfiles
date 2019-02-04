@@ -145,7 +145,7 @@ noremap <leader>ss :set spell!<cr>
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 
 " Switch between the last two files
-nnoremap <tab><tab> <c-^>
+nnoremap <leader><leader> <C-^>
 
 " command mode complition with <C-p> and <C-n>
 cnoremap <C-p> <Up>
