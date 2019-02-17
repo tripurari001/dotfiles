@@ -76,16 +76,6 @@ set splitright
 " Always use vertical diffs
 set diffopt+=vertical,iwhite
 
-" Toggle White-space Changes in diff
-nnoremap <leader>iw :call IwhiteToggle()<CR>
-function! IwhiteToggle()
-  if &diffopt =~ 'iwhite'
-    set diffopt-=iwhite
-  else
-    set diffopt+=iwhite
-  endif
-endfunction
-
 " Character for CLI expansion (TAB-completion)
 set wildchar=<TAB> 
 set wildignorecase
@@ -137,6 +127,7 @@ nnoremap Y y$
 " NERDTree settings
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
 
 "Toggle spell check
 noremap <leader>ss :set spell!<cr>
@@ -171,6 +162,16 @@ cnoremap Wq wq
 cnoremap QA qa
 cnoremap qA qa
 cnoremap Q! q!
+
+" Toggle White-space Changes in diff
+nnoremap <leader>iw :call IwhiteToggle()<CR>
+function! IwhiteToggle()
+  if &diffopt =~ 'iwhite'
+    set diffopt-=iwhite
+  else
+    set diffopt+=iwhite
+  endif
+endfunction
 
 
 "$$$$$$$$$$$$$$$$$$$$ shortcuts end $$$$$$$$$$$$$$$$$$$$$$$$$$$$
