@@ -37,9 +37,7 @@ set nowrap
 
 "color scheme
 set t_Co=256
-set background=dark        " for the light version
-colorscheme one
-let g:one_allow_italics = 1 " I love italic for comments
+colorscheme neodark
 
 " Highlight current line
 set cursorline
