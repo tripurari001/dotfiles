@@ -115,6 +115,7 @@ bindkey '^E' edit-command-line                   # Opens Vim to edit current com
 # ctrl + p, and ctrl + n behave same as up and down arrow
 bindkey "^P" up-line-or-beginning-search
 bindkey "^n" down-line-or-beginning-search
+bindkey -M vicmd '?' history-incremental-search-backward
 
 
 #######################
