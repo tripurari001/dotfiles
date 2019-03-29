@@ -56,6 +56,10 @@ set encoding=utf-8 nobomb
 " to show invisible character as
 set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_
 
+
+" autocomplete settings
+set completeopt+=menuone,noinsert,noselect   " show menu for even 1 option and do not auto insert suggestions 
+
 " turn on spelling check
 "set spell
 
