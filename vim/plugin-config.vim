@@ -16,6 +16,10 @@ let g:user_emmet_leader_key='<C-E>'
 " Mu-completer settings
 set completeopt+=menuone,noinsert,noselect   " show menu for even 1 option and do not auto insert suggestions 
 
+" Do not auto select first option when using tab
+" use completeopt setting for tab as well
+let g:mucomplete#always_use_completeopt = 1
+
 " Order of complition method
 	let g:mucomplete#chains = {
 		\ 'default' : ['file', 'c-n']
