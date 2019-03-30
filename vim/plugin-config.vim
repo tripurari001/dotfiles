@@ -15,7 +15,7 @@ let g:user_emmet_leader_key='<C-E>'
 
 " Do not auto select first option when using tab
 " use completeopt setting for tab as well
-let g:mucomplete#always_use_completeopt = 1
+" let g:mucomplete#always_use_completeopt = 1
 
 " Order of complition method
 	let g:mucomplete#chains = {
