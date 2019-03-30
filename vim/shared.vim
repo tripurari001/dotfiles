@@ -58,7 +58,7 @@ set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_
 
 
 " autocomplete settings
-set completeopt+=menuone,noinsert,noselect   " show menu for even 1 option and do not auto insert suggestions 
+set completeopt+=menuone   " show menu for even 1 option 
 
 " :help i_CTRL_N  where to look when ctrl+n is pressed in insert mode
 set complete=.,w,b,u,i
