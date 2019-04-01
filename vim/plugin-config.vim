@@ -25,6 +25,9 @@ let g:user_emmet_leader_key='<C-E>'
 " Auto suggestion 
 " let g:mucomplete#enable_auto_at_startup = 1
 
+" Disable prettier on autosave
+let g:prettier#autoformat = 0
+
 
 "############# ALE Config #############
 let g:ale_sign_column_always = 1

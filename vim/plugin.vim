@@ -49,5 +49,26 @@ Plug 'w0rp/ale'
 " Mu-Complete for autocomplete
 Plug 'lifepillar/vim-mucomplete'
 
+" Prettier ( formatter )
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'branch': 'release/1.x',
+  \ 'for': [
+    \ 'javascript',
+    \ 'typescript',
+    \ 'css',
+    \ 'less',
+    \ 'scss',
+    \ 'json',
+    \ 'graphql',
+    \ 'markdown',
+    \ 'vue',
+    \ 'lua',
+    \ 'php',
+    \ 'python',
+    \ 'ruby',
+    \ 'html',
+    \ 'swift' ] }
+
 " Initialize plugin system
 call plug#end()
