@@ -49,6 +49,9 @@ Plug 'w0rp/ale'
 " Mu-Complete for autocomplete
 Plug 'lifepillar/vim-mucomplete'
 
+" For Tagfile Management
+Plug 'ludovicchabant/vim-gutentags'
+
 " Prettier ( formatter )
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',

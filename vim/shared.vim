@@ -78,6 +78,9 @@ set splitbelow
 " New windows goes right
 set splitright
 
+" Write actual file everytime
+set backupcopy=yes
+
 " Always use vertical diffs
 set diffopt+=vertical,iwhite
 

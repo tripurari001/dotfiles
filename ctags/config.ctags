@@ -120,3 +120,4 @@
 --exclude=dist
 --exclude=cache
 --exclude=compiled
+--exclude=public
