@@ -52,6 +52,9 @@ Plug 'lifepillar/vim-mucomplete'
 " For Tagfile Management
 Plug 'ludovicchabant/vim-gutentags'
 
+" Editor Config Plugin
+Plug 'sgur/vim-editorconfig'
+
 " Prettier ( formatter )
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
