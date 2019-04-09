@@ -37,7 +37,8 @@ set nowrap
 
 "color scheme
 set t_Co=256
-colorscheme neodark
+set background=dark
+colorscheme hybrid
 
 " Highlight current line
 set cursorline

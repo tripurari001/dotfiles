@@ -5,7 +5,7 @@
 call plug#begin('~/.trippcconfig/vim/plugged')
 
 " ColorScheme
-Plug 'KeitaNakamura/neodark.vim'
+Plug 'w0ng/vim-hybrid'
 
 " The one and only NerdTree
 Plug 'scrooloose/nerdtree'
