@@ -394,11 +394,11 @@ command! -nargs=0 DisableStatusLine call <sid>disableStatusLine()
   endf
 
   fun! BuildTabLine()
-    return (tabpagenr('$') == 1 ? '' : join(map(
+    return (join(map(
           \   range(1, tabpagenr('$')),
           \   '(v:val == tabpagenr() ? "%#TabLineSel#" : "%#TabLine#") . "%".v:val."T %{BuildTabLabel(".v:val.",".(v:val == tabpagenr()).")}"'
           \ ), ''))
-          \ . "%#TabLineFill#%T%=⌘ %<%{&columns < 100 ? fnamemodify(getcwd(), ':t') : getcwd()} " . (tabpagenr('$') > 1 ? "%999X✕ " : "")
+          \ . "%#TabLineFill#%T%=⌘ %<%{&columns < 100 ? fnamemodify(getcwd(), ':t') : getcwd()} "
   endf
 
 " }}}
