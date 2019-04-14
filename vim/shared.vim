@@ -48,9 +48,6 @@ set numberwidth=1
 " Show the (partial) command as it’s being typed
 set showcmd
 
-" Always show the tab bar
-set showtabline=2
-
 " No intro, suppress ins-completion messages, use [+] instead of [Modified]
 set shortmess+=Icm
 
