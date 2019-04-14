@@ -10,9 +10,6 @@ Plug 'w0ng/vim-hybrid'
 " The one and only NerdTree
 Plug 'scrooloose/nerdtree'
 
-"make status line cool
-Plug 'vim-airline/vim-airline'
-
 "surround vim
 Plug 'tpope/vim-surround'
 
@@ -27,9 +24,6 @@ Plug 'tpope/vim-commentary'
 
 "auto pairs
 Plug 'jiangmiao/auto-pairs'
-
-"jinja template hilight
-Plug 'Glench/Vim-Jinja2-Syntax', {'for': ['jinja', 'twig']}
 
 "rust support for nvim
 Plug 'rust-lang/rust.vim', {'for': ['rs']}

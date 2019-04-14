@@ -3,9 +3,6 @@
 " vim - jsx support in .js extension
 let g:jsx_ext_required = 0
 
-" use powerline font in status line
-let g:airline_powerline_fonts = 1
-
 " Show hidden files in NerdTree
 let NERDTreeShowHidden=1
 
@@ -22,7 +19,7 @@ let g:user_emmet_leader_key='<C-E>'
 		\ 'default' : ['file', 'c-n']
 		\ }
 
-" Auto suggestion 
+" Auto suggestion
 " let g:mucomplete#enable_auto_at_startup = 1
 
 " Disable prettier on autosave
