@@ -272,10 +272,12 @@ fun! s:smoothScroll(up)
   execute "normal " . (a:up ? "\<c-y>" : "\<c-e>")
   redraw
   for l:count in range(3, &scroll, 2)
-    sleep 10m
+    sleep 7m
     execute "normal " . (a:up ? "\<c-y>" : "\<c-e>")
     redraw
   endfor
+  " bring the cursor in the middle
+  execute "normal M"
 endf
 
 fun! s:enableStatusLine()
