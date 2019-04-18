@@ -287,7 +287,7 @@ fun! s:enableStatusLine()
   augroup END
   augroup GetGitBranch
     autocmd!
-    autocmd VimEnter,WinEnter,BufEnter,VimResized * call StatuslineGitBranch()
+    autocmd VimEnter,WinEnter,BufEnter * call StatuslineGitBranch()
   augroup END
   set noshowmode " Do not show the current mode because it is displayed in the status line
   set noruler
@@ -344,7 +344,7 @@ endf
 
 function! StatuslineGitBranch()
   let b:gitbranch=""
-  if &modifiable && get(w:,'lf_winwd', 100)>99
+  if &modifiable
     let l:gitrevparse=system("git rev-parse --abbrev-ref HEAD")
     if l:gitrevparse!~"fatal: not a git repository"
       let b:gitbranch=substitute(l:gitrevparse, '\n', '', 'g')
@@ -386,15 +386,6 @@ command! -nargs=0 DisableStatusLine call <sid>disableStatusLine()
       return s:mode_map[l:mode]
     endfunction
 
-
-  " newMode may be a value as returned by mode() or the name of a highlight group
-  " Note: setting highlight groups while computing the status line may cause the
-  " startup screen to disappear. See: https://github.com/powerline/powerline/issues/250
-"  fun! s:updateStatusLineHighlight(newMode)
-"    execute 'hi! link CurrMode' get(g:mode_map, a:newMode, ["", a:newMode])[1]
-"    return 1
-"  endf
-
   " nr is always the number of the currently active window. In a %{} context, winnr()
   " always refers to the window to which the status line being drawn belongs. Since this
   " function is invoked in a %{} context, winnr() may be different from a:nr. We use this
@@ -407,48 +398,30 @@ command! -nargs=0 DisableStatusLine call <sid>disableStatusLine()
     return ''
   endf
 
-  " Build the status line the way I want - no fat light plugins!
-"  fun! BuildStatusLine(nr)
-"    return '%{SetupStl('.a:nr.')}
-"          \%#CurrMode#%{w:["lf_active"] ? "  " . get(g:mode_map, mode(), [mode()])[0] . (&paste ? " PASTE " : " ") : ""}%*
-"          \ %{(w:["lf_active"] ? "" : "   ") . winnr()} %{&modified ? "◦" : " "} %t (%n) %{&modifiable ? (&readonly ? "▪" : " ") : "✗"}
-"          \ %<%{empty(&buftype) ? (w:["lf_winwd"] < 80 ? (w:["lf_winwd"] < 50 ? "" : expand("%:p:h:t")) : expand("%:p:~:h")) : ""}
-"          \ %=
-"          \ %a %w %{&ft} %{w:["lf_winwd"] < 80 ? "" : " " . (strlen(&fenc) ? &fenc : &enc) . (&bomb ? ",BOM " : " ")
-"          \ . &ff . (&expandtab ? "" : " ⇥ ")} %l:%v %P
-"          \ %#Warnings#%{w:["lf_active"] ? get(b:, "lf_stl_warnings", "") : ""}%*'
-"  endf
-
   fun! s:setStatusLine()
     set laststatus=2
     set statusline=%{SetFlags()}
-    set statusline+=%{StatuslineMode()}
-    set statusline+=\ 
-    set statusline+=%{b:gitbranch}
-    set statusline+=\ 
-    set statusline+=B:%n\ W:%{winnr()}
-    set statusline+=\ 
-    set statusline+=%<%f
-    set statusline+=%m
-    set statusline+=%{&modifiable?(&readonly?'▪':''):'✗'}
-    set statusline+=%h
+    set statusline+=%1*\ %{StatuslineMode()}\                                   "To remove warning of trailing space
+    set statusline+=%2*%{get(w:,'lf_winwd',100)>99?'\ '.b:gitbranch.'\ ':''}
+    set statusline+=%#CursorLineNr#\ B:%n\ W:%{winnr()}\                        "To remove warning of trailing space
+    set statusline+=%3*\ %<%f%m
+    set statusline+=%3*%{&modifiable?(&readonly?'▪':''):'✗'}%h\                 "To remove warning of trailing space
     set statusline+=%=
-    set statusline+=\ 
-    set statusline+=%y
-    set statusline+=%{&ff}
-    set statusline+=\ 
-    set statusline+=%{strlen(&fenc)?&fenc:&enc}
-    set statusline+=\ 
-    set statusline+=%l
-    set statusline+=/
-    set statusline+=%L
-    set statusline+=:
-    set statusline+=%c
-    set statusline+=\ 
-    set statusline+=%P
+    set statusline+=%3*\ %y\                                                    "To remove warning of trailing space
+    set statusline+=%2*\ %{&ff}[%{strlen(&fenc)?&fenc:&enc}]\                   "To remove warning of trailing space
+    set statusline+=%1*\ %l/%L:%c\ %P\                                          "To remove warning of trailing space
     set statusline+=%#WarningMsg#
     set statusline+=%{get(w:,'lf_active')&&(get(w:,'lf_winwd')>99)?get(b:,'lf_stl_warnings',''):''}
   endf
+
+  highlight User1 ctermfg=17  ctermbg=190 guifg=#00005f guibg=#dfff00
+  highlight User2 ctermfg=255 ctermbg=238 guifg=#ffffff guibg=#444444
+  highlight User3 ctermfg=85  ctermbg=234 guifg=#9cffd3 guibg=#202020
+
+
+
+
+
 
 " }}}
 " Tabline {{{
