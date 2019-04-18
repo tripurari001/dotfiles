@@ -267,7 +267,6 @@ function! s:toggleWhiteSpaceInDiffMode()
   endif
 endfunction
 
-
 fun! s:smoothScroll(up)
   execute "normal " . (a:up ? "\<c-y>" : "\<c-e>")
   redraw
@@ -286,24 +285,29 @@ fun! s:enableStatusLine()
     autocmd!
     autocmd BufReadPost,BufWritePost * call <sid>update_warnings()
   augroup END
+  augroup GetGitBranch
+    autocmd!
+    autocmd VimEnter,WinEnter,BufEnter,VimResized * call StatuslineGitBranch()
+  augroup END
   set noshowmode " Do not show the current mode because it is displayed in the status line
   set noruler
-  let g:default_stl = &statusline
-  let g:default_tal = &tabline
-  set statusline=%!BuildStatusLine(winnr()) " winnr() is always the number of the *active* window
+  let g:default_stl = 1
+  let g:default_tal = 1
+  call s:setStatusLine()
   set tabline=%!BuildTabLine()
 endf
 
 fun! s:disableStatusLine()
   if !exists("g:default_stl") | return | endif
-  let &tabline = g:default_tal
-  let &statusline = g:default_stl
   unlet g:default_tal
   unlet g:default_stl
   set ruler
   set showmode
+  set statusline=
   autocmd! lf_warnings
   augroup! lf_warnings
+  autocmd! GetGitBranch
+  augroup! GetGitBranch
 endf
 
 " Update trailing space and mixed indent warnings for the current buffer.
@@ -338,6 +342,17 @@ fun! s:removeTrailingSpace()
   echomsg 'Trailing space removed!'
 endf
 
+function! StatuslineGitBranch()
+  let b:gitbranch=""
+  if &modifiable && get(w:,'lf_winwd', 100)>99
+    let l:gitrevparse=system("git rev-parse --abbrev-ref HEAD")
+    if l:gitrevparse!~"fatal: not a git repository"
+      let b:gitbranch=substitute(l:gitrevparse, '\n', '', 'g')
+    endif
+  endif
+endfunction
+
+
 " }}}
 " Custom commands {{{
 " Custom status line
@@ -347,12 +362,30 @@ command! -nargs=0 DisableStatusLine call <sid>disableStatusLine()
 " }}}
 " Status line {{{
   " See :h mode()
-  let g:mode_map = {
-        \ 'n': ['N', 'NormalMode' ], 'i': ['I', 'InsertMode' ],      'R': ['R', 'ReplaceMode'],
-        \ 'v': ['V', 'VisualMode' ], 'V': ['V', 'VisualMode' ], "\<c-v>": ['V', 'VisualMode' ],
-        \ 's': ['S', 'VisualMode' ], 'S': ['S', 'VisualMode' ], "\<c-s>": ['S', 'VisualMode' ],
-        \ 'c': ['C','CommandMode'],  'r': ['P', 'CommandMode'],      't': ['T','CommandMode'],
-        \ '!': ['!',  'CommandMode']}
+    let s:mode_map = {
+      \ 'c'  : 'COMMAND',
+      \ 'i'  : 'INSERT',
+      \ 'ic' : 'INSERT COMPL',
+      \ 'ix' : 'INSERT COMPL',
+      \ 'n'  : 'NORMAL',
+      \ 'ni' : '(INSERT)',
+      \ 'no' : 'OP PENDING',
+      \ 'R'  : 'REPLACE',
+      \ 'Rv' : 'V REPLACE',
+      \ 's'  : 'SELECT',
+      \ 'S'  : 'S-LINE',
+      \ '' : 'S-BLOCK',
+      \ 't'  : 'TERMINAL',
+      \ 'v'  : 'VISUAL',
+      \ 'V'  : 'V-LINE',
+      \ '' : 'V-BLOCK',
+      \}
+
+    function! StatuslineMode()
+      let l:mode=mode()
+      return s:mode_map[l:mode]
+    endfunction
+
 
   " newMode may be a value as returned by mode() or the name of a highlight group
   " Note: setting highlight groups while computing the status line may cause the
@@ -366,16 +399,12 @@ command! -nargs=0 DisableStatusLine call <sid>disableStatusLine()
   " always refers to the window to which the status line being drawn belongs. Since this
   " function is invoked in a %{} context, winnr() may be different from a:nr. We use this
   " fact to detect whether we are drawing in the active window or in an inactive window.
-  fun! SetupStl(nr)
-    return get(extend(w:, {
-          \ "lf_active": winnr() != a:nr
-            \ ? 0
-            \ : (mode() ==# get(g:, "lf_cached_mode", "")
-              \ ? 1
-              \ : s:updateStatusLineHighlight(get(extend(g:, { "lf_cached_mode": mode() }), "lf_cached_mode"))
-              \ ),
-          \ "lf_winwd": winwidth(winnr())
-          \ }), "", "")
+  fun! SetFlags()
+    call extend(w:, {
+      \ 'lf_active': 1,
+      \ 'lf_winwd': winwidth(winnr()),
+      \ })
+    return ''
   endf
 
   " Build the status line the way I want - no fat light plugins!
@@ -389,6 +418,38 @@ command! -nargs=0 DisableStatusLine call <sid>disableStatusLine()
           \ . &ff . (&expandtab ? "" : " ⇥ ")} %l:%v %P
           \ %#Warnings#%{w:["lf_active"] ? get(b:, "lf_stl_warnings", "") : ""}%*'
   endf
+
+  fun! s:setStatusLine()
+    set laststatus=2
+    set statusline=%{SetFlags()}
+    set statusline+=%{StatuslineMode()}
+    set statusline+=\ 
+    set statusline+=%{b:gitbranch}
+    set statusline+=\ 
+    set statusline+=B:%n\ W:%{winnr()}
+    set statusline+=\ 
+    set statusline+=%<%f
+    set statusline+=%m
+    set statusline+=%{&modifiable?(&readonly?'▪':''):'✗'}
+    set statusline+=%h
+    set statusline+=%=
+    set statusline+=\ 
+    set statusline+=%y
+    set statusline+=%{&ff}
+    set statusline+=\ 
+    set statusline+=%{strlen(&fenc)?&fenc:&enc}
+    set statusline+=\ 
+    set statusline+=%l
+    set statusline+=/
+    set statusline+=%L
+    set statusline+=:
+    set statusline+=%c
+    set statusline+=\ 
+    set statusline+=%P
+    set statusline+=%#WarningMsg#
+    set statusline+=%{get(w:,'lf_active')&&(get(w:,'lf_winwd')>99)?get(b:,'lf_stl_warnings',''):''}
+  endf
+
 " }}}
 " Tabline {{{
   fun! BuildTabLabel(nr, active)
