@@ -411,7 +411,7 @@ command! -nargs=0 DisableStatusLine call <sid>disableStatusLine()
     set statusline+=%2*\ %{&ff}[%{strlen(&fenc)?&fenc:&enc}]\                   "To remove warning of trailing space
     set statusline+=%1*\ %l/%L:%c\ %P\                                          "To remove warning of trailing space
     set statusline+=%#WarningMsg#
-    set statusline+=%{get(w:,'lf_active')&&(get(w:,'lf_winwd')>99)?get(b:,'lf_stl_warnings',''):''}
+    set statusline+=%{get(w:,'lf_active')&&get(w:,'lf_winwd')>99?get(b:,'lf_stl_warnings',''):''}
   endf
 
   highlight User1 ctermfg=17  ctermbg=190 guifg=#00005f guibg=#dfff00
