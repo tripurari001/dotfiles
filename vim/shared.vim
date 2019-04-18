@@ -390,10 +390,10 @@ command! -nargs=0 DisableStatusLine call <sid>disableStatusLine()
   " newMode may be a value as returned by mode() or the name of a highlight group
   " Note: setting highlight groups while computing the status line may cause the
   " startup screen to disappear. See: https://github.com/powerline/powerline/issues/250
-  fun! s:updateStatusLineHighlight(newMode)
-    execute 'hi! link CurrMode' get(g:mode_map, a:newMode, ["", a:newMode])[1]
-    return 1
-  endf
+"  fun! s:updateStatusLineHighlight(newMode)
+"    execute 'hi! link CurrMode' get(g:mode_map, a:newMode, ["", a:newMode])[1]
+"    return 1
+"  endf
 
   " nr is always the number of the currently active window. In a %{} context, winnr()
   " always refers to the window to which the status line being drawn belongs. Since this
@@ -408,16 +408,16 @@ command! -nargs=0 DisableStatusLine call <sid>disableStatusLine()
   endf
 
   " Build the status line the way I want - no fat light plugins!
-  fun! BuildStatusLine(nr)
-    return '%{SetupStl('.a:nr.')}
-          \%#CurrMode#%{w:["lf_active"] ? "  " . get(g:mode_map, mode(), [mode()])[0] . (&paste ? " PASTE " : " ") : ""}%*
-          \ %{(w:["lf_active"] ? "" : "   ") . winnr()} %{&modified ? "◦" : " "} %t (%n) %{&modifiable ? (&readonly ? "▪" : " ") : "✗"}
-          \ %<%{empty(&buftype) ? (w:["lf_winwd"] < 80 ? (w:["lf_winwd"] < 50 ? "" : expand("%:p:h:t")) : expand("%:p:~:h")) : ""}
-          \ %=
-          \ %a %w %{&ft} %{w:["lf_winwd"] < 80 ? "" : " " . (strlen(&fenc) ? &fenc : &enc) . (&bomb ? ",BOM " : " ")
-          \ . &ff . (&expandtab ? "" : " ⇥ ")} %l:%v %P
-          \ %#Warnings#%{w:["lf_active"] ? get(b:, "lf_stl_warnings", "") : ""}%*'
-  endf
+"  fun! BuildStatusLine(nr)
+"    return '%{SetupStl('.a:nr.')}
+"          \%#CurrMode#%{w:["lf_active"] ? "  " . get(g:mode_map, mode(), [mode()])[0] . (&paste ? " PASTE " : " ") : ""}%*
+"          \ %{(w:["lf_active"] ? "" : "   ") . winnr()} %{&modified ? "◦" : " "} %t (%n) %{&modifiable ? (&readonly ? "▪" : " ") : "✗"}
+"          \ %<%{empty(&buftype) ? (w:["lf_winwd"] < 80 ? (w:["lf_winwd"] < 50 ? "" : expand("%:p:h:t")) : expand("%:p:~:h")) : ""}
+"          \ %=
+"          \ %a %w %{&ft} %{w:["lf_winwd"] < 80 ? "" : " " . (strlen(&fenc) ? &fenc : &enc) . (&bomb ? ",BOM " : " ")
+"          \ . &ff . (&expandtab ? "" : " ⇥ ")} %l:%v %P
+"          \ %#Warnings#%{w:["lf_active"] ? get(b:, "lf_stl_warnings", "") : ""}%*'
+"  endf
 
   fun! s:setStatusLine()
     set laststatus=2
