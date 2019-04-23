@@ -345,12 +345,17 @@ endf
 function! StatuslineGitBranch()
   let b:gitbranch=""
   if &modifiable
-    let l:gitrevparse=system("git rev-parse --abbrev-ref HEAD")
-    if l:gitrevparse!~"fatal: not a git repository"
-      let b:gitbranch=' '.substitute(l:gitrevparse, '\n', '', 'g').' '
+    try
+      lcd %:p:h
+      let l:gitrevparse=system("git rev-parse --abbrev-ref HEAD")
+      if l:gitrevparse!~"fatal: not a git repository"
+        let b:gitbranch=' '.substitute(l:gitrevparse, '\n', '', 'g').' '
+      endif
+      lcd -
+    catch
+    endtry
     endif
-  endif
-endfunction
+  endfunction
 
 
 " }}}
