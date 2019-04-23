@@ -354,8 +354,8 @@ function! StatuslineGitBranch()
       lcd -
     catch
     endtry
-    endif
-  endfunction
+  endif
+endfunction
 
 
 " }}}
