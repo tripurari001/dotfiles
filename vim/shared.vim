@@ -347,7 +347,7 @@ function! StatuslineGitBranch()
   if &modifiable
     let l:gitrevparse=system("git rev-parse --abbrev-ref HEAD")
     if l:gitrevparse!~"fatal: not a git repository"
-      let b:gitbranch=substitute(l:gitrevparse, '\n', '', 'g')
+      let b:gitbranch=' '.substitute(l:gitrevparse, '\n', '', 'g').' '
     endif
   endif
 endfunction
@@ -403,7 +403,7 @@ command! -nargs=0 ToggleWhiteSpaceInDiffMode call <sid>toggleWhiteSpaceInDiffMod
     set laststatus=2
     set statusline=%{SetFlags()}
     set statusline+=%1*\ %{StatuslineMode()}\                                   "To remove warning of trailing space
-    set statusline+=%2*%{get(w:,'lf_winwd',100)>99?'\ '.b:gitbranch.'\ ':''}
+    set statusline+=%2*%{get(w:,'lf_winwd',100)>99?b:gitbranch:''}
     set statusline+=%#CursorLineNr#\ B:%n\ W:%{winnr()}\                        "To remove warning of trailing space
     set statusline+=%3*\ %<%f%m
     set statusline+=%3*%{&modifiable?(&readonly?'▪':''):'✗'}%h\                 "To remove warning of trailing space
