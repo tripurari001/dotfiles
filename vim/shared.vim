@@ -191,7 +191,7 @@ cnoremap qA qa
 cnoremap Q! q!
 
 " Toggle White-space Changes in diff
-nnoremap <leader>iw :call s:toggleWhiteSpaceInDiffMode()<CR>
+nnoremap <leader>iw :ToggleWhiteSpaceInDiffMode<CR>
 
 " Smooth scrolling that works both in terminal and in GUI Vim
 nnoremap <silent> <c-u> :call <sid>smoothScroll(1)<cr>
@@ -358,6 +358,7 @@ endfunction
 " Custom status line
 command! -nargs=0 EnableStatusLine call <sid>enableStatusLine()
 command! -nargs=0 DisableStatusLine call <sid>disableStatusLine()
+command! -nargs=0 ToggleWhiteSpaceInDiffMode call <sid>toggleWhiteSpaceInDiffMode()
 
 " }}}
 " Status line {{{
