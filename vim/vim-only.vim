@@ -21,9 +21,9 @@ set hls
 " incrimental search
 set incsearch
 " set status line and show cursor position
-set laststatus=2
+" set laststatus=2
 " insert tab other than indention
-"set smarttab
+" set smarttab
 " improve the terminal connection
 set ttyfast
 " visual autocomplete for command menu

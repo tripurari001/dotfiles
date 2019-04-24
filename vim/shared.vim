@@ -243,10 +243,10 @@ colorscheme hybrid
 " }}}
 " Color scheme for diff mode {{{
 
-  highlight DiffAdd    cterm=bold ctermfg=0    ctermbg=2    gui=bold    guifg=#232834 guibg=#A6CC70
-  highlight DiffDelete cterm=bold ctermfg=0    ctermbg=203  gui=bold    guifg=#232834 guibg=#F27983
-  highlight DiffChange cterm=bold ctermfg=0    ctermbg=11   gui=bold    guifg=#232834 guibg=#FFCC66
-  highlight DiffText   cterm=bold ctermfg=0    ctermbg=32   gui=bold    guifg=#232834 guibg=#77A8D9
+highlight DiffAdd    cterm=bold ctermfg=0    ctermbg=2    gui=bold    guifg=#232834 guibg=#A6CC70
+highlight DiffDelete cterm=bold ctermfg=0    ctermbg=203  gui=bold    guifg=#232834 guibg=#F27983
+highlight DiffChange cterm=bold ctermfg=0    ctermbg=11   gui=bold    guifg=#232834 guibg=#FFCC66
+highlight DiffText   cterm=bold ctermfg=0    ctermbg=32   gui=bold    guifg=#232834 guibg=#77A8D9
 
 
 " Cterm - sets the style
@@ -287,7 +287,7 @@ fun! s:enableStatusLine()
   augroup END
   augroup GetGitBranch
     autocmd!
-    autocmd VimEnter,WinEnter,BufEnter * call StatuslineGitBranch()
+    autocmd VimEnter,WinEnter,BufEnter * call <sid>statuslineGitBranch()
   augroup END
   set noshowmode " Do not show the current mode because it is displayed in the status line
   set noruler
@@ -342,13 +342,13 @@ fun! s:removeTrailingSpace()
   echomsg 'Trailing space removed!'
 endf
 
-function! StatuslineGitBranch()
+function! s:statuslineGitBranch()
   let b:gitbranch=""
   if &modifiable
-      let l:gitrevparse=system('git -C '.expand('%:p:h').' rev-parse --abbrev-ref HEAD')
-      if !v:shell_error
-        let b:gitbranch=' '.substitute(l:gitrevparse, '\n', '', 'g').' '
-      endif
+    let l:gitrevparse=system('git -C '.expand('%:p:h').' rev-parse --abbrev-ref HEAD')
+    if !v:shell_error
+      let b:gitbranch=' '.substitute(l:gitrevparse, '\n', '', 'g').' '
+    endif
   endif
 endfunction
 
@@ -362,8 +362,8 @@ command! -nargs=0 ToggleWhiteSpaceInDiffMode call <sid>toggleWhiteSpaceInDiffMod
 
 " }}}
 " Status line {{{
-  " See :h mode()
-    let s:mode_map = {
+" See :h mode()
+let s:mode_map = {
       \ 'c'  : 'COMMAND',
       \ 'i'  : 'INSERT',
       \ 'ic' : 'INSERT COMPL',
@@ -382,42 +382,42 @@ command! -nargs=0 ToggleWhiteSpaceInDiffMode call <sid>toggleWhiteSpaceInDiffMod
       \ '' : 'V-BLOCK',
       \}
 
-    function! StatuslineMode()
-      let l:mode=mode()
-      return s:mode_map[l:mode]
-    endfunction
+function! StatuslineMode()
+  let l:mode=mode()
+  return s:mode_map[l:mode]
+endfunction
 
-  " nr is always the number of the currently active window. In a %{} context, winnr()
-  " always refers to the window to which the status line being drawn belongs. Since this
-  " function is invoked in a %{} context, winnr() may be different from a:nr. We use this
-  " fact to detect whether we are drawing in the active window or in an inactive window.
-  fun! SetFlags()
-    call extend(w:, {
-      \ 'lf_active': 1,
-      \ 'lf_winwd': winwidth(winnr()),
-      \ })
-    return ''
-  endf
+" nr is always the number of the currently active window. In a %{} context, winnr()
+" always refers to the window to which the status line being drawn belongs. Since this
+" function is invoked in a %{} context, winnr() may be different from a:nr. We use this
+" fact to detect whether we are drawing in the active window or in an inactive window.
+fun! SetFlags()
+  call extend(w:, {
+        \ 'lf_active': 1,
+        \ 'lf_winwd': winwidth(winnr()),
+        \ })
+  return ''
+endf
 
-  fun! s:setStatusLine()
-    set laststatus=2
-    set statusline=%{SetFlags()}
-    set statusline+=%1*\ %{StatuslineMode()}\                                   "To remove warning of trailing space
-    set statusline+=%2*%{get(w:,'lf_winwd',100)>99?b:gitbranch:''}
-    set statusline+=%#CursorLineNr#\ B:%n\ W:%{winnr()}\                        "To remove warning of trailing space
-    set statusline+=%3*\ %<%f%m
-    set statusline+=%3*%{&modifiable?(&readonly?'▪':''):'✗'}%h\                 "To remove warning of trailing space
-    set statusline+=%=
-    set statusline+=%3*\ %y\                                                    "To remove warning of trailing space
-    set statusline+=%2*\ %{&ff}[%{strlen(&fenc)?&fenc:&enc}]\                   "To remove warning of trailing space
-    set statusline+=%1*\ %l/%L:%c\ %P\                                          "To remove warning of trailing space
-    set statusline+=%#WarningMsg#
-    set statusline+=%{get(w:,'lf_active')&&get(w:,'lf_winwd')>99?get(b:,'lf_stl_warnings',''):''}
-  endf
+fun! s:setStatusLine()
+  set laststatus=2
+  set statusline=%{SetFlags()}
+  set statusline+=%1*\ %{StatuslineMode()}\                                   "To remove warning of trailing space
+  set statusline+=%2*%{get(w:,'lf_winwd',100)>99?b:gitbranch:''}
+  set statusline+=%#CursorLineNr#\ B:%n\ W:%{winnr()}\                        "To remove warning of trailing space
+  set statusline+=%3*\ %<%f%m
+  set statusline+=%3*%{&modifiable?(&readonly?'▪':''):'✗'}%h\                 "To remove warning of trailing space
+  set statusline+=%=
+  set statusline+=%3*\ %y\                                                    "To remove warning of trailing space
+  set statusline+=%2*\ %{&ff}[%{strlen(&fenc)?&fenc:&enc}]\                   "To remove warning of trailing space
+  set statusline+=%1*\ %l/%L:%c\ %P\                                          "To remove warning of trailing space
+  set statusline+=%#WarningMsg#
+  set statusline+=%{get(w:,'lf_active')&&get(w:,'lf_winwd')>99?get(b:,'lf_stl_warnings',''):''}
+endf
 
-  highlight User1 ctermfg=17  ctermbg=190 guifg=#00005f guibg=#dfff00
-  highlight User2 ctermfg=255 ctermbg=238 guifg=#ffffff guibg=#444444
-  highlight User3 ctermfg=85  ctermbg=234 guifg=#9cffd3 guibg=#202020
+highlight User1 ctermfg=17  ctermbg=190 guifg=#00005f guibg=#dfff00
+highlight User2 ctermfg=255 ctermbg=238 guifg=#ffffff guibg=#444444
+highlight User3 ctermfg=85  ctermbg=234 guifg=#9cffd3 guibg=#202020
 
 
 
@@ -426,20 +426,20 @@ command! -nargs=0 ToggleWhiteSpaceInDiffMode call <sid>toggleWhiteSpaceInDiffMod
 
 " }}}
 " Tabline {{{
-  fun! BuildTabLabel(nr, active)
-    return (a:active ? '●' : a:nr).' '.fnamemodify(bufname(tabpagebuflist(a:nr)[tabpagewinnr(a:nr) - 1]), ":t:s/^$/[No Name]/").' '
-  endf
+fun! BuildTabLabel(nr, active)
+  return (a:active ? '●' : a:nr).' '.fnamemodify(bufname(tabpagebuflist(a:nr)[tabpagewinnr(a:nr) - 1]), ":t:s/^$/[No Name]/").' '
+endf
 
-  fun! BuildTabLine()
-    return (join(map(
-          \   range(1, tabpagenr('$')),
-          \   '(v:val == tabpagenr() ? "%#TabLineSel#" : "%#TabLine#") . "%".v:val."T %{BuildTabLabel(".v:val.",".(v:val == tabpagenr()).")}"'
-          \ ), ''))
-          \ . "%#TabLineFill#%T%=⌘ %<%{&columns < 100 ? fnamemodify(getcwd(), ':t') : getcwd()} "
-  endf
+fun! BuildTabLine()
+  return (join(map(
+        \   range(1, tabpagenr('$')),
+        \   '(v:val == tabpagenr() ? "%#TabLineSel#" : "%#TabLine#") . "%".v:val."T %{BuildTabLabel(".v:val.",".(v:val == tabpagenr()).")}"'
+        \ ), ''))
+        \ . "%#TabLineFill#%T%=⌘ %<%{&columns < 100 ? fnamemodify(getcwd(), ':t') : getcwd()} "
+endf
 
 " }}}
 " Init {{{
-  let g:LargeFile = 20*1024*1024 " 20MB
-  EnableStatusLine
+let g:LargeFile = 20*1024*1024 " 20MB
+EnableStatusLine
 " }}}
