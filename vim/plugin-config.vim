@@ -16,7 +16,7 @@ let g:user_emmet_leader_key='<C-E>'
 
 " Order of complition method
 	let g:mucomplete#chains = {
-		\ 'default' : ['file', 'c-n']
+		\ 'default' : ['path', 'c-n']
 		\ }
 
 " Auto suggestion
