@@ -49,7 +49,7 @@ set numberwidth=1
 set showcmd
 
 " No intro, suppress ins-completion messages, use [+] instead of [Modified]
-set shortmess+=Icm
+set shortmess+=m
 
 " Case insensitive search
 set ignorecase
@@ -89,7 +89,7 @@ set complete=.,w,b,u,i
 "set spell
 
 " show the current mode
-set showmode
+" set showmode
 
 " treat dash separated words as a word text object
 set iskeyword+=-
@@ -145,12 +145,9 @@ noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 
 
-"Remap j and k to act as expected when used on long, wrapped, lines
-nnoremap j gj
-nnoremap k gk
-
-"Quick yanking to the end of the line
-nnoremap Y y$
+" Remap j and k to act as expected when used on long, wrapped, lines
+" nnoremap j gj
+" nnoremap k gk
 
 " NERDTree settings
 nnoremap <leader>ne :NERDTreeToggle<CR>
@@ -200,6 +197,9 @@ nnoremap <silent> <c-d> :call <sid>smoothScroll(0)<cr>
 nnoremap <c-e> <c-e><c-e>
 nnoremap <c-y> <c-y><c-y>
 
+" More Info About current file
+nnoremap <c-g> 2<c-g>
+
 " Remove ttailing space
 nnoremap <silent> <leader>ts :<c-u>call <sid>removeTrailingSpace()<cr>
 
@@ -228,11 +228,12 @@ nnoremap <leader>0 10<c-w>w
 " Easier copy/pasting to/from OS clipboard
 nnoremap gy "*y
 vnoremap gy "*y
-nnoremap gY "*Y
 nnoremap gp "*p
 vnoremap gp "*p
 nnoremap gP "*P
 vnoremap gP "*P
+nnoremap Y  y$
+nnoremap gY "*y$
 
 " }}}
 " Color Scheme {{{
@@ -383,8 +384,7 @@ let s:mode_map = {
       \}
 
 function! StatuslineMode()
-  let l:mode=mode()
-  return s:mode_map[l:mode]
+  return s:mode_map[mode()]
 endfunction
 
 " nr is always the number of the currently active window. In a %{} context, winnr()
