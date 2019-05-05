@@ -9,11 +9,6 @@ scriptencoding utf-16
 " EOL of current buffer
 set fileformats=unix,mac,dos
 
-if has('langmap') && exists('+langremap') | set nolangremap | endif
-
-" show cursor position on status line
-set ruler
-
 "allow other file to open without saving current
 set hidden
 
@@ -34,8 +29,8 @@ set whichwrap=b,~,<,>,[,],h,l
 " Prevents inserting two spaces after punctuation on a join (J)
 set nojoinspaces
 
-" Do not wrap after a one-letter word and remove extra comment when joining lines
-set formatoptions+=1j
+" Don't break a line after a one-letter word. It's broken before it instead (if possible).
+set formatoptions+=1
 
 " Get help for word under cursor by pressing K
 set keywordprg=:help
@@ -44,9 +39,6 @@ set keywordprg=:help
 set number
 set relativenumber
 set numberwidth=1
-
-" Show the (partial) command as it’s being typed
-set showcmd
 
 " No intro, suppress ins-completion messages, use [+] instead of [Modified]
 set shortmess+=m
@@ -89,7 +81,7 @@ set complete=.,w,b,u,i
 "set spell
 
 " show the current mode
-" set showmode
+set showmode
 
 " treat dash separated words as a word text object
 set iskeyword+=-
@@ -119,9 +111,8 @@ set wildignore+=*/smarty/*,*/vendor/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,
 " use par to format text whitch is better than vim's internal formatter
 set formatprg=par
 
-if has('persistent_undo')
-  set undofile
-endif
+" Remember undo across vim session
+set undofile
 
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.trippcconfig/vim/backups
@@ -143,11 +134,6 @@ noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
-
-
-" Remap j and k to act as expected when used on long, wrapped, lines
-" nnoremap j gj
-" nnoremap k gk
 
 " NERDTree settings
 nnoremap <leader>ne :NERDTreeToggle<CR>
@@ -400,7 +386,6 @@ fun! SetFlags()
 endf
 
 fun! s:setStatusLine()
-  set laststatus=2
   set statusline=%{SetFlags()}
   set statusline+=%1*\ %{StatuslineMode()}\                                   "To remove warning of trailing space
   set statusline+=%2*%{get(w:,'lf_winwd',100)>99?b:gitbranch:''}

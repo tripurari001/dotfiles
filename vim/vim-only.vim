@@ -2,8 +2,6 @@
 " settings witch are already enable on neovim "
 """""""""""""""""""""""""""""""""""""""""""""""
 
-" enter into modern mode
-set nocompatible
 " Set syntax on
 syntax on
 filetype plugin indent on
@@ -12,19 +10,26 @@ set autoindent
 set autoread
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-" scan for autocompletion
-set complete-=i
 " dont show @ symbol if last line dosent fit on screen
 set display+=lastline
 " Higlhight search
-set hls
+set hlsearch
 " incrimental search
 set incsearch
 " set status line and show cursor position
-" set laststatus=2
+set laststatus=2
 " insert tab other than indention
-" set smarttab
+set smarttab
 " improve the terminal connection
 set ttyfast
 " visual autocomplete for command menu
 set wildmenu
+" Where it makes sense, remove a comment leader when joining lines.
+set formatoptions+=j
+"
+set nolangnoremap
+" show cursor position on status line
+set ruler
+" Show the (partial) command as it’s being typed
+set showcmd
+
