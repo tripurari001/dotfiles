@@ -32,6 +32,9 @@ set nojoinspaces
 " Don't break a line after a one-letter word. It's broken before it instead (if possible).
 set formatoptions+=1
 
+" Fold based on indent
+set foldmethod=indent
+
 " Get help for word under cursor by pressing K
 set keywordprg=:help
 
