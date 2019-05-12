@@ -86,10 +86,6 @@ fun! s:setStatusLine()
   set statusline+=%{get(w:,'lf_active')&&get(w:,'lf_winwd')>99?get(b:,'lf_stl_warnings',''):''}
 endf
 
-highlight User1 ctermfg=17  ctermbg=190 guifg=#00005f guibg=#dfff00
-highlight User2 ctermfg=255 ctermbg=238 guifg=#ffffff guibg=#444444
-highlight User3 ctermfg=85  ctermbg=234 guifg=#9cffd3 guibg=#202020
-
 " Functions to Enable and Disable StatusLine
 fun! s:enableStatusLine() abort
   if exists("g:default_stl") | return | endif

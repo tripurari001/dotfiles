@@ -3,6 +3,11 @@ function! s:customizeTheme() abort
   highlight DiffDelete cterm=bold ctermfg=0    ctermbg=203  gui=bold    guifg=#232834 guibg=#F27983
   highlight DiffChange cterm=bold ctermfg=0    ctermbg=11   gui=bold    guifg=#232834 guibg=#FFCC66
   highlight DiffText   cterm=bold ctermfg=0    ctermbg=32   gui=bold    guifg=#232834 guibg=#77A8D9
+
+  " This is used in statusline hilighting
+  highlight User1 ctermfg=17  ctermbg=190 guifg=#00005f guibg=#dfff00
+  highlight User2 ctermfg=255 ctermbg=238 guifg=#ffffff guibg=#444444
+  highlight User3 ctermfg=85  ctermbg=234 guifg=#9cffd3 guibg=#202020
 endfunction
 
 augroup customizeTheme
@@ -13,8 +18,6 @@ augroup END
 set background=dark
 let g:hybrid_reduced_contrast = 1
 colorscheme hybrid
-
-
 
 " Cterm - sets the style
 " Ctermfg - set the text color
