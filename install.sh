@@ -8,7 +8,7 @@
 rootDir=~/.trippcconfig
 vimDir=$rootDir/vim
 vimrc=$vimDir/tp_vimrc
-nvimrc=$vimDir/tp_init_nvim
+nvimrc=$vimDir/init.vim
 tmuxDir=$rootDir/tmux
 tmuxFile=$tmuxDir/tmux.conf
 zshDir=$rootDir/zsh
