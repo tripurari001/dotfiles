@@ -134,7 +134,7 @@ echo "Installing new vim, nvim, tmux, zsh, oh-my-zsh  configuration"
 echo ""
 sleep 2s
 
-mkdir $backupDir
+create_dir_if_not_already $backupDir
 
 install_if_not_already git
 
