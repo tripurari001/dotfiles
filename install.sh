@@ -7,8 +7,8 @@
 # path variables to use
 rootDir=~/.trippcconfig
 vimDir=$rootDir/vim
-vimrc=$vimDir/vimrc
-nvimrc=$vimDir/init.vim
+vimrc=$vimDir/tp_vimrc
+nvimrc=$vimDir/tp_init_nvim
 tmuxDir=$rootDir/tmux
 tmuxFile=$tmuxDir/tmux.conf
 zshDir=$rootDir/zsh
@@ -79,6 +79,9 @@ install_if_not_already() {
 # 1st param source
 # 2nd param backup destination
 take_backup() {
+  if [ -L $1 ]; then
+    rm $1
+  fi
   if [ -f $1 ] || [ -d $1 ]; then 
     mv $1 $backupDir/$2
   fi

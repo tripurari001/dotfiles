@@ -1,5 +1,6 @@
+" ################################
 " ############# vim-plug #########
-" ############# vim-plug #########
+" ################################
 
 " Specify a directory for plugins
 call plug#begin('~/.trippcconfig/vim/plugged')
@@ -14,10 +15,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 
 "javascript support
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', {'for': ['js', 'javascript', 'es6']}
 
 "JSX support
-Plug 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx', {'for': ['js', 'javascript', 'jsx']}
 
 " " Comment out code easily
 Plug 'tpope/vim-commentary'
@@ -42,9 +43,6 @@ Plug 'w0rp/ale'
 
 " Mu-Complete for autocomplete
 Plug 'lifepillar/vim-mucomplete'
-
-" For Tagfile Management
-Plug 'ludovicchabant/vim-gutentags'
 
 " Editor Config Plugin
 Plug 'sgur/vim-editorconfig'
