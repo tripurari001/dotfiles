@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# this is install script for vim, zsh and tmux 
+# this is install script for vim, zsh and tmux
 # supported on linux and unix platform only
 
 
@@ -82,14 +82,14 @@ take_backup() {
   if [ -L $1 ]; then
     rm $1
   fi
-  if [ -f $1 ] || [ -d $1 ]; then 
+  if [ -f $1 ] || [ -d $1 ]; then
     mv $1 $backupDir/$2
   fi
 }
 
 # 1st param folder address
 create_dir_if_not_already() {
-  if [ ! -d $1 ]; then 
+  if [ ! -d $1 ]; then
     mkdir $1
   fi
 }

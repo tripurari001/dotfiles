@@ -23,7 +23,6 @@ fun! tp_util#removeTrailingSpace() abort
   let l:winview = winsaveview() " Save window state
   keeppatterns %s/\s\+$//e
   call winrestview(l:winview) " Restore window state
-  call s:update_warnings()
   redraw  " See :h :echo-redraw
   echomsg 'Trailing space removed!'
 endf
