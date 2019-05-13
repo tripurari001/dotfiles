@@ -57,6 +57,8 @@ endfunction
 let s:active_winnr = -1
 function! s:onWindowChage() abort
   let s:active_winnr = winnr()
+  call s:statuslineGitBranch()
+  call s:update_warnings()
 endfunction
 
 " nr is always the number of the currently active window. In a %{} context, winnr()
@@ -92,7 +94,6 @@ fun! s:enableStatusLine() abort
   augroup statusLineCmd
     autocmd!
     autocmd BufReadPost,BufWritePost * call <sid>update_warnings()
-    autocmd VimEnter,WinEnter,BufEnter * call <sid>statuslineGitBranch()
     autocmd CmdwinEnter * call <sid>onWindowChage()
     autocmd VimEnter,WinEnter,BufWinEnter,FileType,BufUnload * call <sid>onWindowChage()
   augroup END

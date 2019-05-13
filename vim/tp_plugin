@@ -89,12 +89,12 @@ let g:mucomplete#chains = {
 let g:prettier#autoformat = 0
 
 "############# ALE Config #############
-let g:ale_sign_column_always = 1
+let g:ale_sign_column_always = 0
 let g:ale_sign_error = 'xx'
 let g:ale_sign_warning = '!!'
 
 let g:ale_fixers = {
-\   '*'              : ['remove_trailing_lines', 'trim_whitespace'],
+\   '*'              : ['remove_trailing_lines'],
 \   'javascript'     : ['prettier'],
 \   'javascript.jsx' : ['prettier'],
 \   'json'           : ['prettier'],
