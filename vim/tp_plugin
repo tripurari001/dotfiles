@@ -6,7 +6,7 @@
 call plug#begin('~/.trippcconfig/vim/plugged')
 
 " ColorScheme
-Plug 'w0ng/vim-hybrid'
+Plug 'kristijanhusak/vim-hybrid-material'
 
 " The one and only NerdTree
 Plug 'scrooloose/nerdtree'
