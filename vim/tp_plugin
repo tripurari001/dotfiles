@@ -8,8 +8,8 @@ call plug#begin('~/.trippcconfig/vim/plugged')
 " ColorScheme
 Plug 'kristijanhusak/vim-hybrid-material'
 
-" The one and only NerdTree
-Plug 'scrooloose/nerdtree'
+" Vim Vinegar
+Plug 'tpope/vim-vinegar'
 
 "surround vim
 Plug 'tpope/vim-surround'
@@ -68,9 +68,6 @@ call plug#end()
 
 " vim - jsx support in .js extension
 let g:jsx_ext_required = 0
-
-" Show hidden files in NerdTree
-let NERDTreeShowHidden=1
 
 " Emmet configuration
 let g:user_emmet_mode='i'
