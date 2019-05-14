@@ -79,7 +79,8 @@ let g:user_emmet_leader_key='<C-E>'
 
 " Order of complition method
 let g:mucomplete#chains = {
-      \ 'default' : ['c-n', 'file', 'path']
+      \ 'default' : ['c-n', 'file', 'path', 'c-p'],
+      \ 'vim' : ['path', 'cmd', 'keyn', 'keyp']
       \ }
 
 " Disable prettier on autosave
