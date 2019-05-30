@@ -1,3 +1,6 @@
+" vim: set ft=vim:
+
+
 " Enable Statusline and mark if large file
 let g:LargeFile = 20*1024*1024 "20MB
 

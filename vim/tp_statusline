@@ -1,3 +1,5 @@
+" vim: set ft=vim:
+
 " Update trailing space and mixed indent warnings for the current buffer.
 fun! s:update_warnings() abort
   if exists('b:tp_no_warnings')

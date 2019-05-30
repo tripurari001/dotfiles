@@ -1,3 +1,4 @@
+" vim: set ft=vim:
 " ################################
 " ############# vim-plug #########
 " ################################
@@ -6,7 +7,8 @@
 call plug#begin('~/.trippcconfig/vim/plugged')
 
 " ColorScheme
-Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'junegunn/seoul256.vim'
+Plug 'mhartington/oceanic-next'
 
 " Vim Vinegar
 Plug 'tpope/vim-vinegar'

@@ -1,3 +1,5 @@
+" vim: set ft=vim:
+
 " use Esc to exit insert mode in terminal
 tnoremap <Esc> <C-\><C-n>
 

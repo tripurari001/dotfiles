@@ -1,3 +1,5 @@
+" vim: set ft=vim:
+
 " update screen only when needed
 set lazyredraw
 
