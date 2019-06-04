@@ -7,7 +7,6 @@
 call plug#begin('~/.trippcconfig/vim/plugged')
 
 " ColorScheme
-Plug 'junegunn/seoul256.vim'
 Plug 'mhartington/oceanic-next'
 
 " Vim Vinegar
@@ -17,10 +16,10 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 
 "javascript support
-Plug 'pangloss/vim-javascript', {'for': ['js', 'javascript', 'es6']}
+Plug 'pangloss/vim-javascript', {'for': ['js', 'javascript', 'es6', 'jsm']}
 
 "JSX support
-Plug 'mxw/vim-jsx', {'for': ['js', 'javascript', 'jsx']}
+Plug 'mxw/vim-jsx', {'for': ['js', 'javascript', 'jsx', 'jsm']}
 
 " " Comment out code easily
 Plug 'tpope/vim-commentary'
@@ -49,23 +48,13 @@ Plug 'lifepillar/vim-mucomplete'
 " Editor Config Plugin
 Plug 'sgur/vim-editorconfig'
 
-" Prettier ( formatter )
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install',
-  \ 'branch': 'release/1.x',
-  \ 'for': [
-    \ 'javascript',
-    \ 'html'] }
-
 " Initialize plugin system
 call plug#end()
-
 
 
 " ################################
 " ########## plugin-config #######
 " ################################
-
 
 
 " vim - jsx support in .js extension
@@ -81,9 +70,12 @@ let g:user_emmet_leader_key='<C-E>'
 
 " Order of complition method
 let g:mucomplete#chains = {
-      \ 'default' : ['c-n', 'file', 'path', 'c-p'],
-      \ 'vim' : ['path', 'cmd', 'keyn', 'keyp']
+      \ 'default' : ['c-n', 'path', 'file', 'c-p'],
+      \ 'vim' : ['path', 'cmd', 'keyn', 'keyp', 'file']
       \ }
+
+" Complete path relative to current file
+let g:mucomplete#buffer_relative_paths = 1
 
 " Disable prettier on autosave
 let g:prettier#autoformat = 0

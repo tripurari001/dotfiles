@@ -68,10 +68,6 @@ function! s:onWindowChage() abort
   call s:update_warnings()
 endfunction
 
-" nr is always the number of the currently active window. In a %{} context, winnr()
-" always refers to the window to which the status line being drawn belongs. Since this
-" function is invoked in a %{} context, winnr() may be different from a:nr. We use this
-" fact to detect whether we are drawing in the active window or in an inactive window.
 fun! SetFlags() abort
   call extend(w:, {
         \ 'tp_active': winnr() == s:active_winnr,
