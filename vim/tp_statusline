@@ -53,7 +53,12 @@ let s:mode_map = {
       \}
 
 function! StatuslineMode() abort
-  return s:mode_map[mode()]
+  let l:mode = mode()
+  if(has_key(s:mode_map, l:mode))
+    return s:mode_map[l:mode]
+  else
+    return 'MODE'
+  endif
 endfunction
 
 let s:active_winnr = -1
