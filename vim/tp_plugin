@@ -65,7 +65,7 @@ let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-E>'
 
 " Delay
-let g:mucomplete#completion_delay = 300
+let g:mucomplete#completion_delay = 150
 let g:mucomplete#enable_auto_at_startup = 1
 
 " Order of complition method
