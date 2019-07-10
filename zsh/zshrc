@@ -127,7 +127,5 @@ alias tls='tmux ls'
 alias tnew='tmux new-session -s'
 alias vim='nvim'
 
-
-
-
-
+# FZF binding for zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -131,10 +131,6 @@ noremap <C-k> <C-W>k
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 
-" Netrw settings
-nnoremap <leader>ne :edit .<CR>
-nnoremap <leader>b :CtrlPBuffer<CR>
-
 set pastetoggle=<f9>
 
 "Toggle spell check

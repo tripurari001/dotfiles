@@ -6,6 +6,10 @@
 " Specify a directory for plugins
 call plug#begin('~/.trippcconfig/vim/plugged')
 
+" The Magical FZF
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
 " ColorScheme
 Plug 'mhartington/oceanic-next'
 
@@ -32,9 +36,6 @@ Plug 'rust-lang/rust.vim', {'for': ['rs']}
 
 "emmet for vim
 Plug 'mattn/emmet-vim', {'for': ['jinja', 'html', 'javascript', 'htm', 'shtml', 'stm', 'twig', 'eruby']}
-
-"file finder ctrlP
-Plug 'ctrlpvim/ctrlp.vim'
 
 "fugutive vim
 Plug 'tpope/vim-fugitive'
