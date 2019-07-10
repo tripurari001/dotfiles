@@ -133,6 +133,9 @@ noremap <C-l> <C-W>l
 
 set pastetoggle=<f9>
 
+"Search for files
+noremap <C-p> :FZF<CR>
+
 "Toggle spell check
 noremap <leader>sp :set spell!<cr>
 
