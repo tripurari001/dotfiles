@@ -128,5 +128,5 @@ alias tnew='tmux new-session -s'
 alias vim='nvim'
 
 # FZF binding for zsh
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
