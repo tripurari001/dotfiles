@@ -34,7 +34,7 @@ ctagsDestination=$ctagsDestinationDir/config.ctags
 alacrittyDestination=~/.config/alacritty
 gitconfigDestination=~/.gitconfig
 gitignoreDestination=~/.gitignore
-gittemplateDestination=~/git_template
+gittemplateDestination=~/.git_template
 
 # for error handling in case package manager not found
 
