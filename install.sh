@@ -19,6 +19,7 @@ alacritty=$rootDir/alacritty
 gitDir=$rootDir/gitconfigs
 gitconfig=$gitDir/gitconfig
 gitignore=$gitDir/gitignore
+gittemplate=$gitDir/git_template
 backupDir=$rootDir/oldbackup
 
 ohmyzshDestination=~/.oh-my-zsh
@@ -33,6 +34,7 @@ ctagsDestination=$ctagsDestinationDir/config.ctags
 alacrittyDestination=~/.config/alacritty
 gitconfigDestination=~/.gitconfig
 gitignoreDestination=~/.gitignore
+gittemplateDestination=~/git_template
 
 # for error handling in case package manager not found
 
@@ -168,6 +170,7 @@ ln -s $ctagsFile $ctagsDestination
 ln -s $alacritty $alacrittyDestination
 ln -s $gitconfig $gitconfigDestination
 ln -s $gitignore $gitignoreDestination
+ln -s $gittemplate $gittemplateDestination
 
 
 echo ""
