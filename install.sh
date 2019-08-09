@@ -153,6 +153,7 @@ take_backup $ctagsDestination config.ctags
 take_backup $alacrittyDestination alacritty
 take_backup $gitignoreDestination gitignore
 take_backup $gitconfigDestination gitconfig
+take_backup $gittemplateDestination gittemplate
 
 create_dir_if_not_already ~/.config
 create_dir_if_not_already $ctagsDestinationDir
