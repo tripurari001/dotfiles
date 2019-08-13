@@ -13,3 +13,8 @@ augroup tp_autocmds
         \   call tp_large_file#large(fnamemodify(expand("<afile>"), ":p")) |
         \ endif
 augroup END
+
+augroup tp_filetype
+  autocmd!
+  autocmd BufReadPost *.svelte set syntax=html
+augroup END
