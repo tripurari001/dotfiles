@@ -23,7 +23,7 @@ Plug 'tpope/vim-surround'
 Plug 'pangloss/vim-javascript', {'for': ['js', 'javascript', 'es6', 'jsm']}
 
 "JSX support
-Plug 'mxw/vim-jsx', {'for': ['js', 'javascript', 'jsx', 'jsm']}
+Plug 'maxmellon/vim-jsx-pretty', {'for': ['js', 'javascript', 'jsx', 'jsm']}
 
 " " Comment out code easily
 Plug 'tpope/vim-commentary'
