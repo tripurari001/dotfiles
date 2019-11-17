@@ -6,14 +6,14 @@
 " Specify a directory for plugins
 call plug#begin('~/.trippcconfig/vim/plugged')
 
-" The Magical FZF
+"The Magical FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" ColorScheme
+"ColorScheme
 Plug 'mhartington/oceanic-next'
 
-" Vim Vinegar
+"Vim Vinegar
 Plug 'tpope/vim-vinegar'
 
 "surround vim
@@ -22,10 +22,13 @@ Plug 'tpope/vim-surround'
 "javascript support
 Plug 'pangloss/vim-javascript', {'for': ['js', 'javascript', 'es6', 'jsm']}
 
+"Svelte support
+Plug 'evanleck/vim-svelte'
+
 "JSX support
 Plug 'maxmellon/vim-jsx-pretty', {'for': ['js', 'javascript', 'jsx', 'jsm']}
 
-" " Comment out code easily
+"Comment out code easily
 Plug 'tpope/vim-commentary'
 
 "auto pairs
