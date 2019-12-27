@@ -5,11 +5,6 @@ if (has("termguicolors"))
 endif
 
 function! s:customizeTheme() abort
-  highlight DiffAdd    cterm=bold ctermfg=0    ctermbg=2    gui=bold    guifg=#232834 guibg=#A6CC70
-  highlight DiffDelete cterm=bold ctermfg=0    ctermbg=203  gui=bold    guifg=#232834 guibg=#F27983
-  highlight DiffChange cterm=bold ctermfg=0    ctermbg=24   gui=bold    guifg=#232834 guibg=#6F8499
-  highlight DiffText   cterm=bold ctermfg=0    ctermbg=32   gui=bold    guifg=#232834 guibg=#5799DB
-
   " This is used in statusline hilighting
   highlight User1 ctermfg=17  ctermbg=190 guifg=#00005f guibg=#dfff00
   highlight User2 ctermfg=255 ctermbg=238 guifg=#ffffff guibg=#444444
