@@ -11,7 +11,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 "ColorScheme
-Plug 'mhartington/oceanic-next'
+Plug 'haishanh/night-owl.vim'
 
 "Vim Vinegar
 Plug 'tpope/vim-vinegar'

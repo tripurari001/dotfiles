@@ -1,5 +1,9 @@
 " vim: set ft=vim:
 
+if (has("termguicolors"))
+ set termguicolors
+endif
+
 function! s:customizeTheme() abort
   highlight DiffAdd    cterm=bold ctermfg=0    ctermbg=2    gui=bold    guifg=#232834 guibg=#A6CC70
   highlight DiffDelete cterm=bold ctermfg=0    ctermbg=203  gui=bold    guifg=#232834 guibg=#F27983
@@ -17,10 +21,7 @@ augroup customizeTheme
   autocmd ColorScheme * call <sid>customizeTheme()
 augroup END
 
-" for colorScheme seoul256
-let g:seoul256_background = 234
-set background=dark
-colorscheme OceanicNext
+colorscheme night-owl
 
 " Cterm - sets the style
 " Ctermfg - set the text color

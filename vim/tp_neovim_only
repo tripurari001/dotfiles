@@ -12,9 +12,6 @@ tnoremap <c-j> <C-\><C-n><C-w>j
 tnoremap <c-k> <C-\><C-n><C-w>k
 tnoremap <c-l> <C-\><C-n><C-w>l
 
-" set true color
-set termguicolors
-
 " treat emojis 😄  as full width characters
 set emoji
 
