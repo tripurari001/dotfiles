@@ -66,15 +66,15 @@ install_if_not_already() {
     command_to_run=$2
   fi
 
-  if ! hash $command_to_run > /dev/null; then
+  if hash $command_to_run > /dev/null; then
+    echo ""
+    echo "$1 is already installed"
+    echo ""
+  else
     echo ""
     echo "installing:$1"
     echo ""
     $pacin $1
-  else
-    echo ""
-    echo "$1 is already installed"
-    echo ""
   fi
 }
 
