@@ -23,7 +23,8 @@ gittemplate=$gitDir/git_template
 backupDir=$rootDir/oldbackup
 
 ohmyzshDestination=~/.oh-my-zsh
-tmuxDestination=~/.tmux.conf
+tmuxConfigDestination=~/.tmux.conf
+tmuxFolderDestination=~/.tmux
 zshrcDestination=~/.zshrc
 vimrcDestination=~/.vimrc
 vimDirDestination=~/.vim
@@ -146,7 +147,8 @@ git submodule update
 take_backup $vimrcDestination vimrc
 take_backup $vimDirDestination vim
 take_backup $nvimDirDestination nvim
-take_backup $tmuxDestination tmux.conf
+take_backup $tmuxConfigDestination tmux.conf
+take_backup $tmuxFolderDestination tmux
 take_backup $zshrcDestination zshrc
 take_backup $ohmyzshDestination oh-my-zsh
 take_backup $ctagsDestination config.ctags
@@ -164,7 +166,8 @@ create_dir_if_not_already $vimDir/undo
 ln -s $vimrc $vimrcDestination
 ln -s $vimDir $vimDirDestination
 ln -s $vimDir $nvimDirDestination
-ln -s $tmuxFile $tmuxDestination
+ln -s $tmuxFile $tmuxConfigDestination
+ln -s $tmuxDir $tmuxFolderDestination
 ln -s $zshrc $zshrcDestination
 ln -s $ohmyzshDir $ohmyzshDestination
 ln -s $ctagsFile $ctagsDestination
