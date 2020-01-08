@@ -95,6 +95,10 @@ let g:ale_sign_column_always = 0
 let g:ale_sign_error = '◉'
 let g:ale_sign_warning = '◉'
 
+" Jump to errors
+nnoremap <silent> <C-k> <Plug>(ale_previous_wrap)
+nnoremap <silent> <C-j> <Plug>(ale_next_wrap)
+
 let g:ale_fixers = {
 \   'javascript'     : ['prettier'],
 \   'javascript.jsx' : ['prettier'],
