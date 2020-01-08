@@ -1,9 +1,5 @@
 " vim: set ft=vim:
 
-if (has("termguicolors"))
- set termguicolors
-endif
-
 function! s:customizeTheme() abort
   " This is used in statusline hilighting
   highlight User1 ctermfg=17  ctermbg=190 guifg=#00005f guibg=#dfff00
