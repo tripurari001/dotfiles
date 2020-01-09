@@ -93,6 +93,9 @@ set splitright
 " Write actual file everytime
 set backupcopy=yes
 
+" Use ripgrep insted of grep
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+
 " Character for CLI expansion (TAB-completion)
 set wildchar=<TAB>
 set wildignorecase
