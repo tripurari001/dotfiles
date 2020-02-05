@@ -12,7 +12,7 @@ augroup customizeTheme
   autocmd ColorScheme * call <sid>customizeTheme()
 augroup END
 
-colorscheme night-owl
+colorscheme dogrun
 
 " Cterm - sets the style
 " Ctermfg - set the text color

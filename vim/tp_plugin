@@ -10,8 +10,10 @@ call plug#begin('~/.trippcconfig/vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+Plug 'PeterRincker/vim-searchlight'
+
 "ColorScheme
-Plug 'haishanh/night-owl.vim'
+Plug 'wadackel/vim-dogrun'
 
 "Vim Vinegar
 Plug 'tpope/vim-vinegar'
