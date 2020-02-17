@@ -122,9 +122,9 @@ bindkey -M vicmd '?' history-incremental-search-backward
 ### my allias #########
 #######################
 
-alias ta='tmux attach'
-alias tls='tmux ls'
-alias tnew='tmux new-session -s'
+alias tmxa='tmux attach'
+alias tmxls='tmux ls'
+alias tmxnew='tmux new-session -s'
 alias vim='nvim'
 
 # FZF binding for zsh

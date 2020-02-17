@@ -11,7 +11,7 @@ fun! tp_util#smoothScroll(up) abort
   execute "normal " . cmdToEx
   redraw
   for l:count in range(3, &scroll, 2)
-    sleep 7m
+    sleep 1m
     execute "normal " . cmdToEx
     redraw
   endfor
