@@ -134,6 +134,10 @@ noremap <C-k> <C-W>k
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 
+" Move between ALE errors
+nnoremap ]e :ALENext<CR>
+nnoremap [e :ALEPrevious<CR>
+
 set pastetoggle=<f9>
 
 "Search for files
