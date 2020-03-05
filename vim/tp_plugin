@@ -13,7 +13,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'PeterRincker/vim-searchlight'
 
 "ColorScheme
-Plug 'wadackel/vim-dogrun'
+Plug 'kaicataldo/material.vim'
 
 "Vim Vinegar
 Plug 'tpope/vim-vinegar'
