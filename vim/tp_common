@@ -121,12 +121,9 @@ set undodir=~/.trippcconfig/vim/undo
 " ##########            key mapping          ###########
 " ######################################################
 
-" Set Leader key to '\'
-let g:mapleader="\\"
-
-" alias for leader key
-nmap <space> <leader>
-xmap <space> <leader>
+" Set Leader key to 'Space button'
+nnoremap <space> <Nop>
+let g:mapleader=" "
 
 " Smart way to move between windows
 noremap <C-j> <C-W>j
