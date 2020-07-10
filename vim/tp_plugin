@@ -10,6 +10,10 @@ call plug#begin('~/.trippcconfig/vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+"Break bad habit by disabling h,j,k,l
+Plug 'takac/vim-hardtime'
+
+"Hilight current search item
 Plug 'PeterRincker/vim-searchlight'
 
 "ColorScheme
@@ -59,6 +63,9 @@ call plug#end()
 " ########## plugin-config #######
 " ################################
 
+" Enable Hardtime by default
+let g:hardtime_default_on = 1
+let g:hardtime_timeout = 2000
 
 " vim - jsx support in .js extension
 let g:jsx_ext_required = 0
