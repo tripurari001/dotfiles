@@ -5,6 +5,21 @@
 [core]
   excludesfile = ~/.gitignore
   editor = "vim"
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  side-by-side = true
+  line-numbers = true
+  features = decorations
+  whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
 
 [diff]
   tool = nvimdiff2
