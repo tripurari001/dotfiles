@@ -184,7 +184,6 @@ echo ""
 install_if_not_already zsh
 install_if_not_already vim
 install_if_not_already tmux
-install_if_not_already ctags
 
 echo ""
 echo "changing the default shell to zsh"
