@@ -7,7 +7,7 @@
 call plug#begin('~/.trippcconfig/vim/plugged')
 
 "The Magical FZF
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 "Break bad habit by disabling h,j,k,l
