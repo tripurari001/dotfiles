@@ -48,7 +48,7 @@
 [user]
 # Please adapt and uncomment the following lines:
   name = Tripurari Shankar
-  email = tripurari@ixigo.com
+  email = tripurari.shankar@cred.club
 
 [init]
   templatedir = ~/.git_template
