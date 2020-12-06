@@ -26,13 +26,13 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 
 "javascript support
-Plug 'pangloss/vim-javascript', {'for': ['js', 'javascript', 'es6', 'jsm']}
+Plug 'pangloss/vim-javascript', {'for': ['js', 'javascript', 'javascriptreact', 'es6', 'jsm']}
 
 "Svelte support
 Plug 'evanleck/vim-svelte'
 
 "JSX support
-Plug 'maxmellon/vim-jsx-pretty', {'for': ['js', 'javascript', 'jsx', 'jsm']}
+Plug 'maxmellon/vim-jsx-pretty', {'for': ['js', 'javascript', 'javascriptreact', 'jsx', 'jsm']}
 
 "Comment out code easily
 Plug 'tpope/vim-commentary'
@@ -41,7 +41,7 @@ Plug 'tpope/vim-commentary'
 Plug 'rust-lang/rust.vim', {'for': ['rs']}
 
 "emmet for vim
-Plug 'mattn/emmet-vim', {'for': ['jinja', 'html', 'javascript', 'htm', 'shtml', 'stm', 'twig', 'eruby']}
+Plug 'mattn/emmet-vim', {'for': ['jinja', 'html', 'javascript', 'javascriptreact', 'htm', 'shtml', 'stm', 'twig', 'eruby']}
 
 "fugutive vim
 Plug 'tpope/vim-fugitive'
