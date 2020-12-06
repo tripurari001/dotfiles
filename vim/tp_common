@@ -139,7 +139,7 @@ set pastetoggle=<f9>
 
 "Search for files
 noremap <C-p> :Files<CR>
-noremap <leader>fb :Buffers<CR>
+noremap <leader>ls :Buffers<CR>
 noremap <leader>rg :Rg<CR>
 
 "Toggle spell check
