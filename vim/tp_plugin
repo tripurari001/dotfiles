@@ -17,7 +17,7 @@ Plug 'takac/vim-hardtime'
 Plug 'PeterRincker/vim-searchlight'
 
 "ColorScheme
-Plug 'kaicataldo/material.vim'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 "Vim Vinegar
 Plug 'tpope/vim-vinegar'
@@ -29,7 +29,7 @@ Plug 'tpope/vim-surround'
 Plug 'pangloss/vim-javascript', {'for': ['js', 'javascript', 'javascriptreact', 'es6', 'jsm']}
 
 "Svelte support
-Plug 'evanleck/vim-svelte'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 
 "JSX support
 Plug 'maxmellon/vim-jsx-pretty', {'for': ['js', 'javascript', 'javascriptreact', 'jsx', 'jsm']}
