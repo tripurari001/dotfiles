@@ -16,6 +16,9 @@ Plug 'takac/vim-hardtime'
 "Hilight current search item
 Plug 'PeterRincker/vim-searchlight'
 
+"COC autocomplete and LSP
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 "ColorScheme
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
@@ -50,7 +53,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'dense-analysis/ale'
 
 " Mu-Complete for autocomplete
-Plug 'lifepillar/vim-mucomplete'
+" Plug 'lifepillar/vim-mucomplete'
 
 " Editor Config Plugin
 Plug 'sgur/vim-editorconfig'
@@ -75,6 +78,9 @@ let g:list_of_visual_keys = ["h", "j", "k", "l", "<UP>", "<DOWN>", "<LEFT>", "<R
 let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_disabled_keys = []
 
+" COC extension
+let g:coc_global_extensions = [ 'coc-tsserver' ]
+
 " vim - jsx support in .js extension
 let g:jsx_ext_required = 0
 
@@ -89,8 +95,8 @@ let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-E>'
 
 " Delay
-let g:mucomplete#completion_delay = 150
-let g:mucomplete#enable_auto_at_startup = 1
+" let g:mucomplete#completion_delay = 150
+" let g:mucomplete#enable_auto_at_startup = 1
 
 " Order of complition method
 let g:mucomplete#chains = {
