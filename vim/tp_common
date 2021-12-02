@@ -146,7 +146,7 @@ noremap <leader>rg :Rg<CR>
 noremap <leader>sp :set spell!<cr>
 
 "clearing highlighted search
-nnoremap <silent> <leader>/ :nohlsearch<CR>
+nnoremap <silent> <leader>/ :nohlsearch \| diffupdate<CR>
 
 " Switch between the last two files
 nnoremap <leader><leader> <C-^>
@@ -218,5 +218,4 @@ nnoremap gp "*p
 vnoremap gp "*p
 nnoremap gP "*P
 vnoremap gP "*P
-nnoremap Y  y$
-nnoremap gY "*y$
+nnoremap gY "*Y
