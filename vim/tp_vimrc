@@ -1,4 +1,3 @@
 source ~/.trippcconfig/vim/tp_vim_only
 source ~/.trippcconfig/vim/tp_common
 source ~/.trippcconfig/vim/tp_autocmds
-source ~/.trippcconfig/vim/tp_statusline
