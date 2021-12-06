@@ -15,9 +15,6 @@ set hidden
 "set path to find all file inside recursive
 set path+=**
 
-"set location of tag file to .git folder
-set tags^=.git/tags;~
-
 " set indention width to 2
 set tabstop=4
 set shiftwidth=4
