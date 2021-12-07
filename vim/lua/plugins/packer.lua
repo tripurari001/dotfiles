@@ -9,7 +9,6 @@
 --- neovim-lua/README.md
 --- https://github.com/brainfucksec/neovim-lua#readme
 
-
 local cmd = vim.cmd
 cmd [[packadd packer.nvim]]
 

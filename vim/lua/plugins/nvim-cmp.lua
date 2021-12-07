@@ -8,6 +8,7 @@
 
 local cmp = require 'cmp'
 
+cmp.setup {
 -- completion settings
   completion = {
     --completeopt = 'menu,menuone,noselect'
