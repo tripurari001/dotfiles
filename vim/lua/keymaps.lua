@@ -37,7 +37,12 @@ map('n', '<C-l>', '<C-w>l', default_opts)
 -----------------------------------------------------------
 -- Applications & Plugins shortcuts:
 -----------------------------------------------------------
+
+-- Telescope
 map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {noremap = true})
 map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', {noremap = true})
 map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', {noremap = true})
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', {noremap = true})
+
+-- Nvim Tree
+map('n', '<leader>n', '<cmd>NvimTreeToggle<CR>', {noremap = true})

@@ -36,13 +36,19 @@ return packer.startup(function()
   use 'nvim-treesitter/nvim-treesitter'
 
   -- colorschemes
-  use { 'rose-pine/neovim', as = 'rose-pine' }
+  use { 'shaunsingh/moonlight.nvim' }
 
   -- LSP
   use {
     'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer',
   }
+
+  -- Status Line
+  use { 'nvim-lualine/lualine.nvim' }
+
+  -- File Tree
+  use { 'kyazdani42/nvim-tree.lua' }
 
   -- autocomplete
   use {
