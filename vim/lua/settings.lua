@@ -5,7 +5,6 @@
 -----------------------------------------------------------
 -- Neovim API aliases
 -----------------------------------------------------------
-local map = vim.api.nvim_set_keymap     -- set global keymap
 local cmd = vim.cmd     				-- execute Vim commands
 local exec = vim.api.nvim_exec 	        -- execute Vimscript
 local fn = vim.fn       				-- call Vim functions
@@ -15,8 +14,6 @@ local opt = vim.opt         		    -- global/buffer/windows-scoped options
 -----------------------------------------------------------
 -- General
 -----------------------------------------------------------
-map('n', '<space>', '<Nop>', {noremap = true})
-g.mapleader = ' '             -- change leader to a comma
 opt.swapfile = false          -- don't use swapfile
 
 -----------------------------------------------------------
@@ -26,7 +23,6 @@ opt.number = true             -- show line number
 opt.relativenumber = true     -- show relative line number
 opt.showmatch = true          -- highlight matching parenthesis
 opt.foldmethod = 'marker'     -- enable folding (default 'foldmarker')
-opt.colorcolumn = '80'        -- line lenght marker at 80 columns
 opt.splitright = true         -- vertical split to the right
 opt.splitbelow = true         -- orizontal split to the bottom
 opt.ignorecase = true         -- ignore case letters when search
@@ -127,6 +123,3 @@ local disabled_built_ins = {
 for _, plugin in pairs(disabled_built_ins) do
     g["loaded_" .. plugin] = 1
 end
-
--- disable nvim intro
-opt.shortmess:append "sI"

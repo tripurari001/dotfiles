@@ -6,10 +6,13 @@
 local map = vim.api.nvim_set_keymap
 local default_opts = { noremap = true, silent = true }
 local cmd = vim.cmd
+local g = vim.g
 
 -----------------------------------------------------------
 -- Neovim shortcuts:
 -----------------------------------------------------------
+map('n', '<space>', '<Nop>', {noremap = true})
+g.mapleader = ' '             -- change leader to a comma
 
 -----------------------------------------------------------
 -- Easier copy/pasting to/from OS clipboard
@@ -17,7 +20,9 @@ local cmd = vim.cmd
 map('n', 'gy', '"*y', default_opts)
 map('v', 'gy', '"*y', default_opts)
 map('n', 'gp', '"*p', default_opts)
+map('v', 'gp', '"*p', default_opts)
 map('n', 'gP', '"*P', default_opts)
+map('v', 'gP', '"*P', default_opts)
 map('n', 'gY', '"*Y', default_opts)
 
 -- clear search highlighting
