@@ -17,7 +17,7 @@ Website: https://github.com/brainfucksec/neovim-lua
 require('settings')
 require('keymaps')
 require('plugins/packer')
-require('plugins/nvim-tree')
+require('plugins/nvim-telescope')
 require('plugins/nvim-cmp')
 require('plugins/nvim-lspconfig')
 require('plugins/nvim-treesitter')

@@ -23,6 +23,7 @@ opt.swapfile = false          -- don't use swapfile
 -- Neovim UI
 -----------------------------------------------------------
 opt.number = true             -- show line number
+opt.relativenumber = true     -- show relative line number
 opt.showmatch = true          -- highlight matching parenthesis
 opt.foldmethod = 'marker'     -- enable folding (default 'foldmarker')
 opt.colorcolumn = '80'        -- line lenght marker at 80 columns
