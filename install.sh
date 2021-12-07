@@ -8,7 +8,7 @@
 rootDir=~/.trippcconfig
 vimDir=$rootDir/vim
 vimrc=$vimDir/tp_vimrc
-nvimrc=$vimDir/init.vim
+nvimrc=$vimDir/init.lua
 tmuxDir=$rootDir/tmux
 tmuxFile=$tmuxDir/tmux.conf
 zshDir=$rootDir/zsh
@@ -29,7 +29,7 @@ zshrcDestination=~/.zshrc
 vimrcDestination=~/.vimrc
 vimDirDestination=~/.vim
 nvimDirDestination=~/.config/nvim
-nvimrcDestination=$nvimDirDestination/init.vim
+nvimrcDestination=$nvimDirDestination/init.lua
 ctagsDestinationDir=~/.ctags.d
 ctagsDestination=$ctagsDestinationDir/config.ctags
 alacrittyDestination=~/.config/alacritty
