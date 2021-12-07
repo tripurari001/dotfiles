@@ -1,5 +1,6 @@
 require('lualine').setup {
-    options = {
-      theme = 'auto'
-    }
+  options = {
+    icons_enabled = true,
+    theme = 'auto'
+  }
 }
