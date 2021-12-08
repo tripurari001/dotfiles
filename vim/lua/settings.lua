@@ -28,6 +28,8 @@ opt.splitbelow = true         -- orizontal split to the bottom
 opt.ignorecase = true         -- ignore case letters when search
 opt.smartcase = true          -- ignore lowercase for the whole pattern
 opt.linebreak = true          -- wrap on word boundary
+opt.scrolloff = 5             -- show extra line in bottom
+opt.sidescrolloff = 5         -- Show extra chars on side
 
 -- remove whitespace on save
 cmd [[au BufWritePre * :%s/\s\+$//e]]

@@ -28,6 +28,19 @@ map('n', 'gY', '"*Y', default_opts)
 -- clear search highlighting
 map('n', '<leader>/', ':nohlsearch | diffupdate<CR>', default_opts)
 
+-- Toggle last buffer
+map('n', '<leader><leader>', '<C-^>', default_opts)
+
+-- Square bracket mappings (many of them inspired by Unimpaired)
+map('n', '[a', '<cmd><c-u><c-r>=v:count1<cr>prev<cr>', default_opts)
+map('n', ']a', '<cmd><c-u><c-r>=v:count1<cr>next<cr>', default_opts)
+map('n', ']b', '<cmd><c-u><c-r>=v:count1<cr>bn<cr>', default_opts)
+map('n', '[b', '<cmd><c-u><c-r>=v:count1<cr>bp<cr>', default_opts)
+map('n', ']q', '<cmd><c-u><c-r>=v:count1<cr>cnext<cr>zz', default_opts)
+map('n', '[q', '<cmd><c-u><c-r>=v:count1<cr>cprevious<cr>zz', default_opts)
+map('n', ']Q', '<cmd><c-u>clast<cr>zz', default_opts)
+map('n', '[Q', '<cmd><c-u>cfirst<cr>zz', default_opts)
+
 -- move around splits using Ctrl + {h,j,k,l}
 map('n', '<C-h>', '<C-w>h', default_opts)
 map('n', '<C-j>', '<C-w>j', default_opts)
