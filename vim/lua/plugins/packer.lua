@@ -38,6 +38,9 @@ return packer.startup(function()
   -- colorschemes
   use { 'shaunsingh/moonlight.nvim' }
 
+  -- fugitive
+  use { 'tpope/vim-fugitive' }
+
   -- LSP
   use {
     'neovim/nvim-lspconfig',
