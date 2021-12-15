@@ -58,4 +58,5 @@ map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', {noremap = true})
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', {noremap = true})
 
 -- Nvim Tree
-map('n', '<leader>n', '<cmd>NvimTreeToggle<CR>', {noremap = true})
+map('n', '<leader>nf', '<cmd>NvimTreeFindFile<CR>', {noremap = true})
+map('n', '<leader>nn', '<cmd>NvimTreeToggle<CR>', {noremap = true})
