@@ -30,6 +30,7 @@ opt.smartcase = true          -- ignore lowercase for the whole pattern
 opt.linebreak = true          -- wrap on word boundary
 opt.scrolloff = 5             -- show extra line in bottom
 opt.sidescrolloff = 5         -- Show extra chars on side
+opt.diffopt:append("vertical")-- show vertical diff
 
 -- remove whitespace on save
 cmd [[au BufWritePre * :%s/\s\+$//e]]
@@ -106,20 +107,6 @@ local disabled_built_ins = {
     "netrwPlugin",
     "netrwSettings",
     "netrwFileHandlers",
-    "gzip",
-    "zip",
-    "zipPlugin",
-    "tar",
-    "tarPlugin",
-    "getscript",
-    "getscriptPlugin",
-    "vimball",
-    "vimballPlugin",
-    "2html_plugin",
-    "logipat",
-    "rrhelper",
-    "spellfile_plugin",
-    "matchit"
 }
 
 for _, plugin in pairs(disabled_built_ins) do
