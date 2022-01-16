@@ -64,18 +64,7 @@ cmd [[colorscheme moonlight]]
 opt.expandtab = true      -- use spaces instead of tabs
 opt.shiftwidth = 4        -- shift 4 spaces when tab
 opt.tabstop = 4           -- 1 tab == 4 spaces
-opt.smartindent = true    -- autoindent new lines
-
--- don't auto commenting new lines
-cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
-
--- remove line lenght marker for selected filetypes
-cmd [[autocmd FileType text,markdown,html,xhtml,javascript setlocal cc=0]]
-
--- 2 spaces for selected filetypes
-cmd [[
-  autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml setlocal shiftwidth=2 tabstop=2
-]]
+opt.softtabstop = 4       -- Number of spaces that a <Tab> counts for
 
 -----------------------------------------------------------
 -- Autocompletion
@@ -87,16 +76,7 @@ opt.completeopt = 'menuone,noselect'
 -- Terminal
 -----------------------------------------------------------
 -- open a terminal pane on the right using :Term
-cmd [[command Term :botright vsplit term://$SHELL]]
-
--- Terminal visual tweaks
---- enter insert mode when switching to terminal
---- close terminal buffer on process exit
-cmd [[
-    autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
-    autocmd TermOpen * startinsert
-    autocmd BufLeave term://* stopinsert
-]]
+-- cmd [[command Term :botright vsplit term://$SHELL]]
 
 -----------------------------------------------------------
 -- Startup
