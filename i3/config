@@ -51,6 +51,10 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec alacritty
 
+# toggle touchpad
+bindsym XF86TouchpadToggle exec ~/.config/i3/scripts/toggleTouchpad
+bindsym XF86Tools exec ~/.config/i3/scripts/toggleTouchpad
+
 # kill focused window
 bindsym $mod+q kill
 
