@@ -21,6 +21,7 @@ gitconfig=$gitDir/gitconfig
 gitignore=$gitDir/gitignore
 gittemplate=$gitDir/git_template
 backupDir=$rootDir/oldbackup
+i3Dir=$rootDir/i3
 
 ohmyzshDestination=~/.oh-my-zsh
 tmuxConfigDestination=~/.tmux.conf
@@ -36,6 +37,7 @@ alacrittyDestination=~/.config/alacritty
 gitconfigDestination=~/.gitconfig
 gitignoreDestination=~/.gitignore
 gittemplateDestination=~/.git_template
+i3DirDestination=~/.config/i3
 
 # for error handling in case package manager not found
 
@@ -48,6 +50,9 @@ elif hash zypper > /dev/null; then
 elif hash brew > /dev/null; then
   pacup='brew update'
   pacin='brew install'
+elif hash pacman > /dev/null; then
+  pacup='sudo pacman'
+  pacin='sudo pacman -S'
 else
   echo 'no package manager found brew or apt-get or zypper'
   echo 'aborting the installation...'
@@ -156,6 +161,7 @@ take_backup $alacrittyDestination alacritty
 take_backup $gitignoreDestination gitignore
 take_backup $gitconfigDestination gitconfig
 take_backup $gittemplateDestination gittemplate
+take_backup $i3DirDestination i3
 
 create_dir_if_not_already ~/.config
 create_dir_if_not_already $ctagsDestinationDir
@@ -175,6 +181,7 @@ ln -s $alacritty $alacrittyDestination
 ln -s $gitconfig $gitconfigDestination
 ln -s $gitignore $gitignoreDestination
 ln -s $gittemplate $gittemplateDestination
+ln -s $i3Dir $i3DirDestination
 
 
 echo ""
