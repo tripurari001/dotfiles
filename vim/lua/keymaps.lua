@@ -5,7 +5,6 @@
 
 local map = vim.api.nvim_set_keymap
 local default_opts = { noremap = true, silent = true }
-local cmd = vim.cmd
 local g = vim.g
 
 -----------------------------------------------------------
@@ -46,6 +45,12 @@ map('n', '<C-h>', '<C-w>h', default_opts)
 map('n', '<C-j>', '<C-w>j', default_opts)
 map('n', '<C-k>', '<C-w>k', default_opts)
 map('n', '<C-l>', '<C-w>l', default_opts)
+
+-- Navigate neovim + neovim terminal emulator with alt+direction
+map('t', '<C-h>', '<C-\\><C-n><C-w>h', default_opts)
+map('t', '<C-j>', '<C-\\><C-n><C-w>j', default_opts)
+map('t', '<C-k>', '<C-\\><C-n><C-w>k', default_opts)
+map('t', '<C-l>', '<C-\\><C-n><C-w>l', default_opts)
 
 -----------------------------------------------------------
 -- Applications & Plugins shortcuts:
