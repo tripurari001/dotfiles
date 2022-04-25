@@ -1,6 +1,6 @@
 
 # restart process
-killall -9 picom dunst
+killall -9 picom dunst syncthing
 
 # dunst Notification
 dunst --config $HOME/.config/i3/dunstrc &
@@ -11,3 +11,6 @@ picom --config $HOME/.config/i3/picom.conf &
 
 # Polybar
 $HOME/.config/i3/scripts/launchpolybar &
+
+# Syncthing
+syncthing --no-browser
