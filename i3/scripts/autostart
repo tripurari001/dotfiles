@@ -14,3 +14,6 @@ $HOME/.config/i3/scripts/launchpolybar &
 
 # Syncthing
 syncthing --no-browser
+
+#Arandr multi monitor setup
+$HOME/.screenlayout/displayconfig.sh
