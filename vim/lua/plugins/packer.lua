@@ -96,4 +96,6 @@ return packer.startup(function()
       end
   }
 
+  use 'findango/vim-mdx'
+
 end)
