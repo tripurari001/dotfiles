@@ -47,10 +47,10 @@ return packer.startup(function()
   use 'nvim-treesitter/nvim-treesitter'
 
   -- colorschemes
-  use { 'shaunsingh/moonlight.nvim' }
+  use 'navarasu/onedark.nvim'
 
   -- fugitive
-  use { 'tpope/vim-fugitive' }
+  use 'tpope/vim-fugitive'
 
   -- LSP
   use {
@@ -81,4 +81,19 @@ return packer.startup(function()
       'saadparwaiz1/cmp_luasnip',
     },
   }
+
+  -- Prisma syntax Support
+  use {
+      'pantharshit00/vim-prisma'
+  }
+
+  use 'gpanders/editorconfig.nvim'
+
+  use {
+      "ur4ltz/surround.nvim",
+      config = function()
+          require"surround".setup {mappings_style = "surround"}
+      end
+  }
+
 end)

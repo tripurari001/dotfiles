@@ -1,4 +1,3 @@
-local nvim_lsp = require('lspconfig')
 local lsp_installer = require("nvim-lsp-installer")
 
 -- Add additional capabilities supported by nvim-cmp
