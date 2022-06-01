@@ -161,11 +161,16 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# scratchpad
+bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+
 # bind program to workspace and focus to them on startup:
 assign [class="Alacritty|Xfce4-terminal"] $ws1
 assign [class="firefox|discord"] $ws2
 assign [class="Steam"] $ws3
 assign [class="Thunar"] $ws4
+assign [class="discord"] $ws5
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=Xfce4-terminal] focus
