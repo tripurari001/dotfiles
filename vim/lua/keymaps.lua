@@ -10,7 +10,7 @@ local g = vim.g
 -----------------------------------------------------------
 -- Neovim shortcuts:
 -----------------------------------------------------------
-map('n', '<space>', '<Nop>', {noremap = true})
+map('n', '<space>', '<Nop>', default_opts)
 g.mapleader = ' '             -- change leader to a comma
 
 -----------------------------------------------------------
@@ -23,6 +23,24 @@ map('v', 'gp', '"*p', default_opts)
 map('n', 'gP', '"*P', default_opts)
 map('v', 'gP', '"*P', default_opts)
 map('n', 'gY', '"*Y', default_opts)
+
+
+-- general
+map('n', '<leader>sp', '<cmd>set spell!<CR>', {noremap = true})
+map('n', '<c-g>', '2<c-g>', default_opts)
+map('v', '*', '"xy/<C-R>x<CR>', default_opts)
+
+-- for switching to window
+map('n', '<leader>1', '1<c-w>w', default_opts)
+map('n', '<leader>2', '2<c-w>w', default_opts)
+map('n', '<leader>3', '3<c-w>w', default_opts)
+map('n', '<leader>4', '4<c-w>w', default_opts)
+map('n', '<leader>5', '5<c-w>w', default_opts)
+map('n', '<leader>6', '6<c-w>w', default_opts)
+map('n', '<leader>7', '7<c-w>w', default_opts)
+map('n', '<leader>8', '8<c-w>w', default_opts)
+map('n', '<leader>9', '9<c-w>w', default_opts)
+map('n', '<leader>0', '10<c-w>w', default_opts)
 
 -- clear search highlighting
 map('n', '<leader>/', ':nohlsearch | diffupdate<CR>', default_opts)
