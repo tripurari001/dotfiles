@@ -15,9 +15,9 @@ local opt = vim.opt         		    -- global/buffer/windows-scoped options
 -- General
 -----------------------------------------------------------
 opt.undofile  = true           -- keep undo history across session
-opt.backupdir = '~/.trippcconfig/vim/backups'
-opt.directory = '~/.trippcconfig/vim/swaps'
-opt.undodir   = '~/.trippcconfig/vim/undo'
+opt.backupdir = fn.expand('~/.trippcconfig/vim/backups')
+opt.directory = fn.expand('~/.trippcconfig/vim/swaps')
+opt.undodir   = fn.expand('~/.trippcconfig/vim/undo')
 opt.fileformats = 'unix,mac,dos' -- EOL of current buffer
 opt.path:append('**')
 opt.joinspaces = false
