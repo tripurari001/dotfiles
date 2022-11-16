@@ -87,6 +87,11 @@ return packer.startup(function()
       'pantharshit00/vim-prisma'
   }
 
+  use {
+      'nmac427/guess-indent.nvim',
+      config = function() require('guess-indent').setup {} end,
+  }
+
   use 'gpanders/editorconfig.nvim'
 
   use {
