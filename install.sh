@@ -22,6 +22,7 @@ gitignore=$gitDir/gitignore
 gittemplate=$gitDir/git_template
 backupDir=$rootDir/oldbackup
 i3Dir=$rootDir/i3
+wezterm=$rootDir/wezterm
 
 ohmyzshDestination=~/.oh-my-zsh
 tmuxConfigDestination=~/.tmux.conf
@@ -38,6 +39,7 @@ gitconfigDestination=~/.gitconfig
 gitignoreDestination=~/.gitignore
 gittemplateDestination=~/.git_template
 i3DirDestination=~/.config/i3
+weztermDestination=~/.wezterm.lua
 
 # for error handling in case package manager not found
 
@@ -162,6 +164,7 @@ take_backup $gitignoreDestination gitignore
 take_backup $gitconfigDestination gitconfig
 take_backup $gittemplateDestination gittemplate
 take_backup $i3DirDestination i3
+take_backup $weztermDestination wezterm
 
 create_dir_if_not_already ~/.config
 create_dir_if_not_already $ctagsDestinationDir
@@ -182,6 +185,7 @@ ln -s $gitconfig $gitconfigDestination
 ln -s $gitignore $gitignoreDestination
 ln -s $gittemplate $gittemplateDestination
 ln -s $i3Dir $i3DirDestination
+ln -s $wezterm $weztermDestination
 
 
 echo ""
