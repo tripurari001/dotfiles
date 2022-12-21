@@ -47,7 +47,7 @@ return packer.startup(function()
   use 'nvim-treesitter/nvim-treesitter'
 
   -- colorschemes
-  use 'navarasu/onedark.nvim'
+  use 'folke/tokyonight.nvim'
 
   -- fugitive
   use 'tpope/vim-fugitive'
