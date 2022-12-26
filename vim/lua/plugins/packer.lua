@@ -105,4 +105,11 @@ return packer.startup(function()
 
   use 'findango/vim-mdx'
 
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+
 end)

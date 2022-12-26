@@ -5,6 +5,7 @@ require('nvim-tree').setup {
     timeout = 500,
   },
   view = {
+    width = 40,
     number = true,
     relativenumber = true,
   }
