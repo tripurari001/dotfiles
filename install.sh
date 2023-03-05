@@ -21,8 +21,8 @@ gitconfig=$gitDir/gitconfig
 gitignore=$gitDir/gitignore
 gittemplate=$gitDir/git_template
 backupDir=$rootDir/oldbackup
-i3Dir=$rootDir/i3
 wezterm=$rootDir/wezterm
+hyprland=$rootDir/hyprland
 
 ohmyzshDestination=~/.oh-my-zsh
 tmuxConfigDestination=~/.tmux.conf
@@ -38,8 +38,8 @@ alacrittyDestination=~/.config/alacritty
 gitconfigDestination=~/.gitconfig
 gitignoreDestination=~/.gitignore
 gittemplateDestination=~/.git_template
-i3DirDestination=~/.config/i3
 weztermDestination=~/.wezterm.lua
+hyprlandDestination=~/.config/hypr/hyprland.conf
 
 # for error handling in case package manager not found
 
@@ -163,8 +163,8 @@ take_backup $alacrittyDestination alacritty
 take_backup $gitignoreDestination gitignore
 take_backup $gitconfigDestination gitconfig
 take_backup $gittemplateDestination gittemplate
-take_backup $i3DirDestination i3
 take_backup $weztermDestination wezterm
+take_backup $hyprlandDestination hyprland
 
 create_dir_if_not_already ~/.config
 create_dir_if_not_already $ctagsDestinationDir
@@ -184,8 +184,8 @@ ln -s $alacritty $alacrittyDestination
 ln -s $gitconfig $gitconfigDestination
 ln -s $gitignore $gitignoreDestination
 ln -s $gittemplate $gittemplateDestination
-ln -s $i3Dir $i3DirDestination
 ln -s $wezterm $weztermDestination
+ln -s $hyprland $hyprlandDestination
 
 
 echo ""
