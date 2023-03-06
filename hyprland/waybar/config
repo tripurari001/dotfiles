@@ -7,7 +7,7 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
-        "clock"
+        "temperature"
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
@@ -16,7 +16,8 @@
         "battery",
         "backlight",
         "pulseaudio",
-        "pulseaudio#microphone"
+        "pulseaudio#microphone",
+        "clock"
     ],
 
     "hyprland/window": {
@@ -32,7 +33,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{: %R   %d/%m}",
+        "format": "{: %H:%M   %d/%m}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "backlight": {
