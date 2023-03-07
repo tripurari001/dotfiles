@@ -1,81 +1,37 @@
+/* Reset all styles */
 * {
     border: none;
     border-radius: 0;
-    font-family: Cartograph CF Nerd Font, monospace;
-    font-weight: bold;
-    font-size: 20px;
     min-height: 0;
+    margin: 0;
+    padding: 0;
 }
 
-window#waybar {
-    background: rgba(21, 18, 27, 0);
-    color: #cdd6f4;
+/* The whole bar */
+#waybar {
+    background: rgba(0, 0, 0, 0.45);
+    color: rgba(255, 255, 255, 1);
+    font-family: 'JetBrainsMono Nerd Font','Fira Code','DejaVu Sans Mono','Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback', 'NotoEmoji Nerd Font Mono';
+    font-size: 19px;
 }
 
-tooltip {
-    background: #1e1e2e;
-    border-radius: 10px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #11111b;
-}
-
-#window,
-#clock,
+#mode,
 #battery,
+#cpu,
+#memory,
 #pulseaudio,
-#network,
-#tray,
-#backlight {
-    background: #1e1e2e;
-    padding: 0px 10px;
-    margin: 3px 0px;
-    margin-top: 5px;
-    border: 1px solid #181825;
+#temperature {
+    margin: 0px 20px;
 }
 
-#tray {
-    margin-right: 10px;
-}
-
-#custom-updates {
-    color: #f5c2e7;
-    margin-right: 10px;
-}
-
-#window {
-    border-radius: 10px;
-    margin-left: 60px;
-    margin-right: 60px;
-}
-
-#clock {
-    color: #fab387;
-    margin-left: 5px;
-    border-right: 0px;
+#clock.time {
+    margin-left: 15px;
 }
 
 #network {
-    color: #f9e2af;
-    border-left: 0px;
-    border-right: 0px;
 }
 
-#pulseaudio {
-    color: #89b4fa;
-    border-left: 0px;
-    border-right: 0px;
+#battery.warning {
+    color: orange;
 }
 
-#pulseaudio.microphone {
-    color: #cba6f7;
-    border-left: 0px;
-    border-right: 0px;
-    margin-right: 5px;
-}
-
-#battery {
-    color: #a6e3a1;
-    margin-right: 10px;
-    border-left: 0px;
-}
