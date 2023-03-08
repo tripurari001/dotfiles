@@ -24,7 +24,7 @@
 #clock.time,
 #clock.date,
 #temperature {
-    margin: 2px 15px;
+    margin: 2px 12px;
 }
 
 #battery.warning {
