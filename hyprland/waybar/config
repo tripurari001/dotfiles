@@ -2,15 +2,17 @@
     "layer": "top",
     "position": "top",
     "modules-left": [
+        "wlr/workspaces"
     ],
     "modules-center": [
     ],
     "modules-right": [
         "tray",
-        "pulseaudio",
-        "network",
         "temperature",
         "cpu",
+        "pulseaudio",
+        "backlight",
+        "network",
         "battery",
         "clock#date",
         "clock#time"
@@ -35,7 +37,7 @@
     },
     "temperature": {
         "critical-threshold": 75,
-        "format": "<span font=\"12\"></span> {temperatureC}°C"
+        "format": " {temperatureC}°C"
     },
     "battery": {
         "bat": "BAT0",
@@ -44,13 +46,13 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "<span font=\"20\">{icon}</span> {capacity}%",
-        "format-charging": "<span font=\"12\">⚡</span> {capacity}%",
-        "format-plugged": "<span font=\"12\">⚡</span> {capacity}%",
+        "format": "{icon} {capacity}%",
+        "format-charging": "⚡{capacity}%",
+        "format-plugged": "⚡{capacity}%",
         "format-icons": [""]
     },
     "network": {
-        "format-wifi": "<span font=\"18\"></span> {essid}",
+        "format-wifi": " {essid}",
         "tooltip-format-wifi": "{essid} {ipaddr} ({signalStrength}%)",
         "format-ethernet": " ",
         "tooltip-format-ethernet": "{ipaddr}",
@@ -65,4 +67,10 @@
         },
         "on-click": "pavucontrol"
     },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", ""],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-"
+    }
 }
