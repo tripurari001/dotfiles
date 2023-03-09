@@ -27,7 +27,7 @@
     },
     "clock#time": {
         "interval": 60,
-        "format": "{:%H:%M}"
+        "format": "{:%I:%M %p}"
     },
     "cpu": {
         "format": " {load}%"
