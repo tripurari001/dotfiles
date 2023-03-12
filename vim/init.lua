@@ -13,7 +13,7 @@ Neovim init file
 -----------------------------------------------------------
 require('settings')
 require('keymaps')
-require('plugins/packer')
+require('plugins/lazy')
 require('colors')
 require('plugins/nvim-lualine')
 require('plugins/nvim-telescope')
