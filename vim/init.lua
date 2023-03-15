@@ -13,11 +13,5 @@ Neovim init file
 -----------------------------------------------------------
 require('settings')
 require('keymaps')
-require('plugins/lazy')
+require('lazy-plugin-manager')
 require('colors')
-require('plugins/nvim-lualine')
-require('plugins/nvim-telescope')
-require('plugins/nvim-tree')
-require('plugins/nvim-cmp')
-require('plugins/nvim-lspconfig')
-require('plugins/nvim-treesitter')

@@ -5,9 +5,18 @@
 -- Plugin: nvim-treesitter
 -- https://github.com/nvim-treesitter/nvim-treesitter
 
-
-require('nvim-treesitter.configs').setup {
-  highlight = {
-    enable = true,
+return {
+  -- treesitter interface
+  {
+    "nvim-treesitter/nvim-treesitter", build = ":TSUpdate",
+    config = function()
+      require('nvim-treesitter.configs').setup {
+        highlight = {
+          enable = true,
+        },
+      }
+    end
   },
+
 }
+
