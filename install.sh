@@ -7,7 +7,6 @@
 # path variables to use
 rootDir=~/.trippcconfig
 vimDir=$rootDir/vim
-vimrc=$vimDir/tp_vimrc
 nvimrc=$vimDir/init.lua
 tmuxDir=$rootDir/tmux
 tmuxFile=$tmuxDir/tmux.conf
@@ -28,7 +27,6 @@ ohmyzshDestination=~/.oh-my-zsh
 tmuxConfigDestination=~/.tmux.conf
 tmuxFolderDestination=~/.tmux
 zshrcDestination=~/.zshrc
-vimrcDestination=~/.vimrc
 vimDirDestination=~/.vim
 nvimDirDestination=~/.config/nvim
 nvimrcDestination=$nvimDirDestination/init.lua
@@ -151,7 +149,6 @@ install_if_not_already git
 git submodule init
 git submodule update
 
-take_backup $vimrcDestination vimrc
 take_backup $vimDirDestination vim
 take_backup $nvimDirDestination nvim
 take_backup $tmuxConfigDestination tmux.conf
@@ -172,7 +169,6 @@ create_dir_if_not_already $vimDir/swaps
 create_dir_if_not_already $vimDir/backups
 create_dir_if_not_already $vimDir/undo
 
-ln -s $vimrc $vimrcDestination
 ln -s $vimDir $vimDirDestination
 ln -s $vimDir $nvimDirDestination
 ln -s $tmuxFile $tmuxConfigDestination
