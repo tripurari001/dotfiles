@@ -65,7 +65,7 @@
             "headphones": "",
             "default": ["", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "python ~/.trippcconfig/hyprland/scripts/audio-switch.py"
     },
     "backlight": {
         "format": "{icon} {percent}%",
