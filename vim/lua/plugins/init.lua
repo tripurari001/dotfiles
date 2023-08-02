@@ -1,7 +1,7 @@
 return {
   -- autopair
   {
-    'windwp/nvim-autopairs',
+    'echasnovski/mini.pairs',
     config = true,
   },
 
@@ -22,16 +22,14 @@ return {
   'gpanders/editorconfig.nvim',
 
   {
-      "ur4ltz/surround.nvim",
-      config = function()
-          require"surround".setup {mappings_style = "surround"}
-      end,
+      "echasnovski/mini.surround",
+      config = true,
   },
 
   'findango/vim-mdx',
 
   {
-    'numToStr/Comment.nvim',
+    'echasnovski/mini.comment',
     config = true,
   },
 
