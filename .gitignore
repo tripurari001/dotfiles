@@ -6,3 +6,4 @@
 .DS_Store
 **/tmux/plugins/
 **/vim/plugin/packer_compiled.lua
+.dots
