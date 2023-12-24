@@ -110,9 +110,9 @@ set formatprg=par
 set undofile
 
 " Centralize backups, swapfiles and undo history
-set backupdir=~/.trippcconfig/vim/backups
-set directory=~/.trippcconfig/vim/swaps
-set undodir=~/.trippcconfig/vim/undo
+set backupdir=~/dotfiles/vim/backups
+set directory=~/dotfiles/vim/swaps
+set undodir=~/dotfiles/vim/undo
 
 " ######################################################
 " ##########            key mapping          ###########

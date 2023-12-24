@@ -24,7 +24,7 @@
 }
 {
     "label" : "lock",
-    "action" : "swaylock --indicator-caps-lock --indicator-idle-visible --image ~/.trippcconfig/wallpapers/catalina-night.jpg",
+    "action" : "swaylock",
     "text" : "Lock",
     "keybind" : "o"
 }

@@ -4,7 +4,7 @@
 " ################################
 
 " Specify a directory for plugins
-call plug#begin('~/.trippcconfig/vim/plugged')
+call plug#begin('~/dotfiles/vim/plugged')
 
 "The Magical FZF
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
