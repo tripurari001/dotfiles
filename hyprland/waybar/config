@@ -8,7 +8,7 @@
     "height": 50,
     "modules-left": ["custom/launch_rofi","hyprland/workspaces","cpu","memory","disk","hyprland/window"],
     "modules-center": ["idle_inhibitor","custom/updates","clock", "custom/lock_screen"],
-    "modules-right": ["temperature","custom/power_profile","battery","backlight","pulseaudio","pulseaudio#microphone","tray","custom/power_btn"],
+    "modules-right": ["temperature","custom/power_profile","battery","backlight","pulseaudio","pulseaudio#microphone", "custom/notification", "tray","custom/power_btn"],
 
     "hyprland/window": {
         "format": "{}"
@@ -76,7 +76,6 @@
 
     "hyprland/workspaces": {
         "disable-scroll": true,
-        "all-outputs": false,
         "on-click": "activate",
         "persistent-workspaces": {
             "1": [],
@@ -92,7 +91,7 @@
         //shows the current power profile and switches to next on click
         "exec": "asusctl profile -p | sed s:'Active profile is'::",
         "interval": 30,
-        "format": "󰈐{}",
+        "format": "󰈐 {}",
         "on-click": "asusctl profile -n; pkill -SIGRTMIN+8 waybar",
         "signal": 8
     },
@@ -165,5 +164,26 @@
         "critical-threshold": 70,
         "format-critical": " {temperatureC}°C",
         "on-click": "alacritty --start-as=fullscreen --title btop sh -c 'btop'"
-    }
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": " {} {icon} ",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "sleep 0.1 && swaync-client -t -sw",
+        "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+        "escape": true
+    },
 }
