@@ -33,8 +33,6 @@ tooltip label{
 
 #workspaces button.active {
     color: #d4b402;
-    border-radius: 10px;
-    background-color: #000000;
 }
 
 #workspaces button.urgent {
@@ -42,9 +40,10 @@ tooltip label{
 }
 
 #workspaces button:hover {
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
+#custom-notification,
 #custom-launch_rofi,
 #custom-lock_screen,
 #custom-light_dark,
@@ -75,6 +74,12 @@ tooltip label{
 
 #tray, #idle_inhibitor, #temperature, #backlight, #custom-launch_rofi, #cpu {
     border-radius: 10px 0px 0px 10px;
+}
+
+#custom-notification {
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #custom-light_dark, #custom-power_btn, #workspaces, #pulseaudio.microphone, #battery, #disk, #custom-lock_screen {
