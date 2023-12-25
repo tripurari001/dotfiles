@@ -1,0 +1,3 @@
+#!/bin/bash
+
+wlogout --protocol layer-shell -b 6 -T 400 -B 400 --layout ~/dotfiles/hyprland/wlogout/layout.json

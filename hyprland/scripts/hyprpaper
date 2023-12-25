@@ -1,0 +1,3 @@
+#!/bin/bash
+
+hyprpaper --config ~/dotfiles/hyprland/hyprpaper.conf

@@ -27,33 +27,25 @@ tooltip label{
 
 #workspaces button {
     padding: 5px;
-    color: #313244;
+    color: #a6adc8;
     margin-right: 5px;
 }
 
 #workspaces button.active {
-    color: #a6adc8;
-}
-
-#workspaces button.focused {
-    color: #a6adc8;
-    background: #eba0ac;
+    color: #d4b402;
     border-radius: 10px;
+    background-color: #000000;
 }
 
 #workspaces button.urgent {
-    color: #11111b;
-    background: #a6e3a1;
-    border-radius: 10px;
+    color: #fc5444;
 }
 
 #workspaces button:hover {
-    background: #11111b;
-    color: #cdd6f4;
     border-radius: 10px;
 }
 
-#custom-launch_wofi,
+#custom-launch_rofi,
 #custom-lock_screen,
 #custom-light_dark,
 #custom-power_btn,
@@ -71,6 +63,7 @@ tooltip label{
 #tray,
 #temperature,
 #workspaces,
+#idle_inhibitor,
 #backlight {
     background: #1e1e2e;
     opacity: 0.8;
@@ -80,11 +73,11 @@ tooltip label{
     border: 0px;
 }
 
-#tray, #custom-lock_screen, #temperature, #backlight, #custom-launch_wofi, #cpu {
+#tray, #idle_inhibitor, #temperature, #backlight, #custom-launch_rofi, #cpu {
     border-radius: 10px 0px 0px 10px;
 }
 
-#custom-light_dark, #custom-power_btn, #workspaces, #pulseaudio.microphone, #battery, #disk {
+#custom-light_dark, #custom-power_btn, #workspaces, #pulseaudio.microphone, #battery, #disk, #custom-lock_screen {
     border-radius: 0px 10px 10px 0px;
     margin-right: 10px;
 }
@@ -111,7 +104,7 @@ tooltip label{
     margin-right: 20px;
 }
 
-#custom-launch_wofi {
+#custom-launch_rofi {
     color: #89b4fa;
     margin-left: 10px;
     border-right: 0px;

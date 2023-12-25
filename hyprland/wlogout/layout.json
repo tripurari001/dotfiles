@@ -24,7 +24,7 @@
 }
 {
     "label" : "lock",
-    "action" : "swaylock",
+    "action" : "~/dotfiles/hyprland/scripts/swaylock",
     "text" : "Lock",
     "keybind" : "o"
 }

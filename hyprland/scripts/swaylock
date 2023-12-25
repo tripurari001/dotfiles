@@ -1,0 +1,3 @@
+#!/bin/bash
+
+swaylock --indicator-caps-lock --indicator-idle-visible --image ~/dotfiles/wallpapers/catalina-night.jpg
