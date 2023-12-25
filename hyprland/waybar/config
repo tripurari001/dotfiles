@@ -70,7 +70,7 @@
         "format": "{}",
         "exec": "~/dotfiles/hyprland/scripts/update-sys",
         "on-click": "~/dotfiles/hyprland/scripts/update-sys update",
-        "interval": 300,
+        "interval": 3000,
         "tooltip": true
     },
 
