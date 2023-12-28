@@ -1,3 +1,3 @@
 #!/bin/bash
 
-wlogout --protocol layer-shell -b 6 -T 400 -B 400 --layout ~/dotfiles/hyprland/wlogout/layout.json
+wlogout --protocol layer-shell --layout ~/dotfiles/hyprland/wlogout/layout.json --css ~/dotfiles/hyprland/wlogout/style.css
