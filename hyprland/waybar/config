@@ -91,7 +91,7 @@
         //shows the current power profile and switches to next on click
         "exec": "asusctl profile -p | sed s:'Active profile is'::",
         "interval": 30,
-        "format": "󰈐 {}",
+        "format": "󰈐{}",
         "on-click": "asusctl profile -n; pkill -SIGRTMIN+8 waybar",
         "signal": 8
     },
@@ -121,7 +121,7 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon} {capacity}%",
+        "format": "{icon}{capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
