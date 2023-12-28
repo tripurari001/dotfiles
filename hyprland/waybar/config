@@ -21,7 +21,7 @@
     },
 
     "custom/lock_screen": {
-        "format": "",
+        "format": "",
         "on-click": "sh -c '(sleep 0.5s; ~/dotfiles/hyprland/scripts/swaylock)' & disown",
         "tooltip": false
     },
