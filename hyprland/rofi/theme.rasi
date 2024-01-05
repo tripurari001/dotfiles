@@ -1,5 +1,5 @@
 configuration {
-	font:							"JetBrainsMono Nerd Font";
+	font:							"Iosevka Nerd Font";
     show-icons:                     true;
     disable-history:                false;
     display-drun:                   "";
