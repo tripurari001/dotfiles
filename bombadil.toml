@@ -24,5 +24,8 @@ alacritty = { source = "alacritty", target = ".config/alacritty" }
 gitConfig = { source = "gitconfigs/gitconfig", target = ".gitconfig" }
 gitIgnore = { source = "gitconfigs/gitignore", target = ".gitignore" }
 gitTemplate = { source = "gitconfigs/git_template", target = ".git_template" }
-hyprland = { source = "hyprland", target = ".config/hypr" }
 
+[profiles.hypr]
+# hypr specific settings
+[profiles.hypr.dots]
+hyprland = { source = "hyprland", target = ".config/hypr" }
