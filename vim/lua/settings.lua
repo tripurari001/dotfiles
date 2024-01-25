@@ -78,9 +78,9 @@ opt.synmaxcol = 240       -- max column for syntax highlight
 -- Tabs, indent
 -----------------------------------------------------------
 opt.expandtab = true      -- use spaces instead of tabs
-opt.shiftwidth = 4        -- shift 4 spaces when tab
-opt.tabstop = 4           -- 1 tab == 4 spaces
-opt.softtabstop = 4       -- Number of spaces that a <Tab> counts for
+opt.shiftwidth = 2        -- shift 4 spaces when tab
+opt.tabstop = 2           -- 1 tab == 4 spaces
+opt.softtabstop = 2       -- Number of spaces that a <Tab> counts for
 opt.formatoptions:append('1')  -- Don't break a line after a one-letter word. It's broken before it instead (if possible)
 opt.keywordprg = ':help'  -- Get help for word under cursor by pressing K
 opt.shortmess:append('m') -- No intro, suppress ins-completion messages, use [+] instead of [Modified]
