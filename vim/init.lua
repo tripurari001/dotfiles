@@ -14,4 +14,3 @@ Neovim init file
 require('settings')
 require('keymaps')
 require('lazy-plugin-manager')
-require('colors')

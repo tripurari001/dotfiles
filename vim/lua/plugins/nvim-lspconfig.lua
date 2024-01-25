@@ -1,14 +1,14 @@
 return {
   -- LSP
   {
-    {"williamboman/mason.nvim", config = true},
-    {"williamboman/mason-lspconfig.nvim", config = true},
+    { "williamboman/mason.nvim",           config = true },
+    { "williamboman/mason-lspconfig.nvim", config = true },
     {
       'neovim/nvim-lspconfig',
       config = function()
         -- Mappings.
         -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-        local opts = { noremap=true, silent=true }
+        local opts = { noremap = true, silent = true }
         vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
         vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
         vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
@@ -22,7 +22,7 @@ return {
 
           -- Mappings.
           -- See `:help vim.lsp.*` for documentation on any of the below functions
-          local bufopts = { noremap=true, silent=true, buffer=bufnr }
+          local bufopts = { noremap = true, silent = true, buffer = bufnr }
           vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
           vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
           vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -37,7 +37,7 @@ return {
           vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
           vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
           vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-          vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+          vim.keymap.set('n', '<leader>=', function() vim.lsp.buf.format { async = true } end, bufopts)
         end
 
         local lsp_flags = {
@@ -49,7 +49,7 @@ return {
           -- The first entry (without a key) will be the default handler
           -- and will be called for each installed server that doesn't have
           -- a dedicated handler.
-          function (server_name) -- default handler (optional)
+          function(server_name) -- default handler (optional)
             require("lspconfig")[server_name].setup {
               on_attach = on_attach,
               flags = lsp_flags,
@@ -58,11 +58,11 @@ return {
           -- Next, you can provide a dedicated handler for specific servers.
           -- For example, a handler override for the `rust_analyzer`:
           -- ["rust_analyzer"] = function ()
-            --   require("rust-tools").setup {}
-            -- end
-          }
-        end
-      },
+          --   require("rust-tools").setup {}
+          -- end
+        }
+      end
     },
+  },
 
-  }
+}

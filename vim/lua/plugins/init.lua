@@ -5,8 +5,11 @@ return {
     config = true,
   },
 
-  -- colorschemes
-  'folke/tokyonight.nvim',
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {}
+  },
 
   -- fugitive
   'tpope/vim-fugitive',
@@ -15,15 +18,15 @@ return {
   'pantharshit00/vim-prisma',
 
   {
-      'nmac427/guess-indent.nvim',
-      config = true,
+    'nmac427/guess-indent.nvim',
+    config = true,
   },
 
   'gpanders/editorconfig.nvim',
 
   {
-      "echasnovski/mini.surround",
-      config = true,
+    "echasnovski/mini.surround",
+    config = true,
   },
 
   'findango/vim-mdx',

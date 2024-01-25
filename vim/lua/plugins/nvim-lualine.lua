@@ -6,7 +6,7 @@ return {
       require('lualine').setup {
         options = {
           icons_enabled = true,
-          theme = 'auto'
+          theme = 'ayu'
         }
       }
     end
