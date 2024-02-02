@@ -1,8 +1,8 @@
 return {
     {
-        "shatur/neovim-ayu",
+        "navarasu/onedark.nvim",
         config = function()
-            require('ayu').colorscheme()
+            require('onedark').load()
         end
     },
 }
