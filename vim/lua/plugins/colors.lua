@@ -1,8 +1,12 @@
 return {
     {
-        "shatur/neovim-ayu",
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
         config = function()
-            require('ayu').colorscheme()
+            require('tokyonight')
+            vim.cmd[[colorscheme tokyonight-moon]]
         end
     },
 }
