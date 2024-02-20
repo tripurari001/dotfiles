@@ -6,7 +6,7 @@ return {
         opts = {},
         config = function()
             require('tokyonight')
-            vim.cmd[[colorscheme tokyonight]]
+            vim.cmd[[colorscheme tokyonight-moon]]
         end
     },
 }
