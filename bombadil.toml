@@ -15,7 +15,7 @@ dotfiles_dir = "dotfiles"
 
 vim = { source = "vim/tp_vimrc", target = ".vimrc" }
 vimDir = { source = "vim", target = ".vim" }
-neovim = { source = "vim", target = ".config/nvim" }
+#neovim = { source = "vim", target = ".config/nvim" }
 tmuxDir = { source = "tmux", target = ".tmux" }
 tmux = { source = "tmux/tmux.conf", target = ".tmux.conf" }
 zsh = { source = "zsh/zshrc", target = ".zshrc" }
