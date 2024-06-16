@@ -13,7 +13,7 @@ dotfiles_dir = "dotfiles"
 # A dot entry representing a symlink, `source` is relative to `dotfiles_dir`
 # and `target` shall be relative to $HOME directory or absolute.
 
-vim = { source = "vim/tp_vimrc", target = ".vimrc" }
+vim = { source = "vim/.vimrc", target = ".vimrc" }
 vimDir = { source = "vim", target = ".vim" }
 neovim = { source = "nvim", target = ".config/nvim" }
 tmuxDir = { source = "tmux", target = ".tmux" }

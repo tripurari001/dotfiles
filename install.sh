@@ -7,7 +7,7 @@
 # path variables to use
 rootDir=~/.trippcconfig
 vimDir=$rootDir/vim
-vimrc=$vimDir/tp_vimrc
+vimrc=$vimDir/.vimrc
 nvimrc=$vimDir/init.lua
 tmuxDir=$rootDir/tmux
 tmuxFile=$tmuxDir/tmux.conf

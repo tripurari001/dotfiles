@@ -1,0 +1,22 @@
+# ignore following file when creating sym-link
+
+^/README.*
+install.sh
+bombadil.toml
+arch-install.sh
+wallpapers
+
+\.git
+\.gitignore
+\.gitmodules
+
+\!dot-gitignore
+
+\.DS_Store
+\.stowrc
+
+^/README.*
+^/LICENSE.*
+^/COPYING
+
+.dots
