@@ -4,6 +4,6 @@
 **/oldbackup/
 **/vim/.netrwhist
 .DS_Store
-**/tmux/plugins/
+**/.tmux/plugins/
 **/vim/plugin/packer_compiled.lua
 .dots

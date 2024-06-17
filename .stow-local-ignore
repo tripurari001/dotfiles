@@ -7,9 +7,8 @@ arch-install.sh
 wallpapers
 
 \.git
+\.gitignore
 \.gitmodules
-
-\!dot-gitignore
 
 \.DS_Store
 \.stowrc
