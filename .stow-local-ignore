@@ -7,7 +7,6 @@ arch-install.sh
 wallpapers
 
 \.git
-\.gitignore
 \.gitmodules
 
 \!dot-gitignore
