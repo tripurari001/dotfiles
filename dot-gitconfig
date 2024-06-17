@@ -3,7 +3,7 @@
   ui = true
 
 [core]
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.global_gitignore
   editor = "nvim"
 
 [interactive]
