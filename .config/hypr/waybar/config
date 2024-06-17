@@ -16,13 +16,13 @@
 
     "custom/launch_rofi": {
         "format": "",
-        "on-click": "~/dotfiles/hyprland/scripts/rofi-full &",
+        "on-click": "~/dotfiles/.config/hypr/scripts/rofi-full &",
         "tooltip": false
     },
 
     "custom/lock_screen": {
         "format": "",
-        "on-click": "sh -c '(sleep 0.5s; ~/dotfiles/hyprland/scripts/swaylock)' & disown",
+        "on-click": "sh -c '(sleep 0.5s; ~/dotfiles/.config/hypr/scripts/swaylock)' & disown",
         "tooltip": false
     },
 
@@ -37,7 +37,7 @@
 
     "custom/power_btn": {
         "format": " ",
-        "on-click": "sh -c '(sleep 0.5s; ~/dotfiles/hyprland/scripts/logout)' & disown",
+        "on-click": "sh -c '(sleep 0.5s; ~/dotfiles/.config/hypr/scripts/logout)' & disown",
         "tooltip": false
     },
 
@@ -68,8 +68,8 @@
 
     "custom/updates": {
         "format": "{}",
-        "exec": "~/dotfiles/hyprland/scripts/update-sys",
-        "on-click": "~/dotfiles/hyprland/scripts/update-sys update",
+        "exec": "~/dotfiles/.config/hypr/scripts/update-sys",
+        "on-click": "~/dotfiles/.config/hypr/scripts/update-sys update",
         "interval": 3000,
         "tooltip": true
     },
