@@ -22,7 +22,7 @@
 
     "custom/lock_screen": {
         "format": "",
-        "on-click": "sh -c '(sleep 0.5s; ~/dotfiles/.config/hypr/scripts/swaylock)' & disown",
+        "on-click": "sh -c '(sleep 0.5s; ~/dotfiles/.config/hypr/scripts/lock)' & disown",
         "tooltip": false
     },
 

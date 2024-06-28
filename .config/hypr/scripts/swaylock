@@ -1,3 +1,0 @@
-#!/bin/bash
-
-swaylock --indicator-caps-lock --indicator-idle-visible --color 595959CF --inside-color 2d3d40
