@@ -8,4 +8,7 @@ git clone https://github.com/tripurari001/trippcconfig.git ~/dotfiles
 ```
 and then
 ```
-cd ~/dotfiles && chmod +x install.sh && ./install.sh
+cd ~/dotfiles 
+stow -nv . #to check what will happen
+stow -v .
+```
