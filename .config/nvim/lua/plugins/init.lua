@@ -17,6 +17,12 @@ return {
   },
 
   {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  },
+
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
@@ -36,7 +42,7 @@ return {
         "eslint-lsp",
         "tailwindcss-language-server",
         "biome",
-        "vtsls",
+        "bash-language-server",
       },
     },
   },

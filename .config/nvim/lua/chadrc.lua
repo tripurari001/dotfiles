@@ -6,6 +6,7 @@ local M = {}
 
 M.ui = {
 	theme = "catppuccin",
+  theme_toggle = { "catppuccin", "blossom_light" }
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },

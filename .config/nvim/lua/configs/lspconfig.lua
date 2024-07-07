@@ -19,10 +19,10 @@ local servers = {
   "eslint",
   "tailwindcss",
   "biome",
-  "vtsls",
+  "bashls",
 }
 
--- lsps with default config
+-- Lsps with default config
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -30,3 +30,12 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+-- require("typescript-tools").setup {
+--   on_attach = on_attach,
+--   on_init = on_init,
+--   capabilities = capabilities,
+--   settings = {
+--     tsserver_max_memory = "500"
+--   }
+-- }
