@@ -42,6 +42,7 @@ return {
         "tailwindcss-language-server",
         "biome",
         "bash-language-server",
+        "shellcheck",
       },
     },
   },
