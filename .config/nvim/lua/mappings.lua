@@ -30,5 +30,5 @@ map('n', '<c-g>', '2<c-g>', default_opts)
 map('v', '*', '"xy/<C-R>x<CR>', default_opts)
 
 -- Toggle last buffer
-map('n', '<space>', '<Nop>', default_opts) -- us
 map('n', '<leader><leader>', '<C-^>', default_opts)
+map('n', '<leader>X', '<cmd>%bd|e#|bd#<CR>', default_opts)
