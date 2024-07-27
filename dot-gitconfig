@@ -21,22 +21,20 @@
   file-decoration-style = none
 
 [diff]
-  tool = vimdiff
-
+  tool = nvimdiff
 [difftool]
-  trustExitCode = true
-
+  prompt = false
+  keepBackup = false
 [difftool "vimdiff"]
-  path = nvim
+  layout = "LOCAL,MERGED,REMOTE"
 
 [merge]
-  tool = vimdiff
-
+  tool = diffview
 [mergetool]
-  trustExitCode = true
-
-[mergetool "vimdiff"]
-  path = nvim
+  prompt = false
+  keepBackup = false
+[mergetool "diffview"]
+  cmd = nvim -n -c "DiffviewOpen" "$MERGE"
 
 [user]
 # Please adapt and uncomment the following lines:
