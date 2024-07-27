@@ -18,14 +18,6 @@ family = "FiraCode Nerd Font"
 family = "FiraCode Nerd Font"
 style = "Regular"
 
-[font.offset]
-x = 0
-y = 6
-
-[font.glyph_offset]
-x = 0
-y = 3
-
 [shell]
 args = ["--login"]
 program = "/bin/zsh"
