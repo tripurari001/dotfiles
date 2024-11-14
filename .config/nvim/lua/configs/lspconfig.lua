@@ -1,9 +1,9 @@
 -- EXAMPLE
-local on_attach = require("nvchad.configs.lspconfig").on_attach
-local on_init = require("nvchad.configs.lspconfig").on_init
-local capabilities = require("nvchad.configs.lspconfig").capabilities
-
+local nvlsp = require "nvchad.configs.lspconfig"
 local lspconfig = require "lspconfig"
+
+nvlsp.defaults()
+
 local servers = {
   "vimls",
   "html",
@@ -24,9 +24,9 @@ local servers = {
 -- Lsps with default config
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
+    on_attach = nvlsp.on_attach,
+    on_init = nvlsp.on_init,
+    capabilities = nvlsp.capabilities,
   }
 end
 
