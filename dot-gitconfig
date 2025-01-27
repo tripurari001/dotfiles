@@ -39,7 +39,7 @@
 [user]
 # Please adapt and uncomment the following lines:
 	name = Tripurari Shankar
-	email = tripuraris@rippling.com
+	email = tripurari@proton.me
 
 [init]
   templatedir = ~/.git_template
@@ -48,3 +48,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[include]
+  path = ~/.gitconfig.local
