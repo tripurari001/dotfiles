@@ -7,7 +7,7 @@ If you want to install this configration in your machine enter following command
 1. Install GNU-Stow (https://formulae.brew.sh/formula/stow#default)
 
 ```
-git clone https://github.com/tripurari001/trippcconfig.git ~/dotfiles
+git clone https://github.com/tripurari001/dotfiles.git ~/dotfiles
 ```
 and then
 ```
