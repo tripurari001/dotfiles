@@ -30,11 +30,8 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- require("typescript-tools").setup {
---   on_attach = on_attach,
---   on_init = on_init,
---   capabilities = capabilities,
---   settings = {
---     tsserver_max_memory = "500"
---   }
--- }
+require("typescript-tools").setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+}
