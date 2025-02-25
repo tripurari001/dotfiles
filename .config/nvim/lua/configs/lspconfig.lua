@@ -19,6 +19,7 @@ local servers = {
   "tailwindcss",
   "biome",
   "bashls",
+  "protols",
 }
 
 -- Lsps with default config

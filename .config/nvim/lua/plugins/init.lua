@@ -42,6 +42,7 @@ return {
         "biome",
         "bash-language-server",
         "shellcheck",
+        "protols",
       },
     },
   },
