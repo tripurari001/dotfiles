@@ -1,6 +1,6 @@
 font-size                  = 14
 font-family                = "FiraCode Nerd Font"
-theme                      = catppuccin-mocha
+theme                      = Catppuccin Mocha
 gtk-titlebar               = false
 cursor-style               = block
 cursor-style-blink         = false
