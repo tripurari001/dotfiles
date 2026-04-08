@@ -25,7 +25,7 @@
 [difftool]
   prompt = false
   keepBackup = false
-[difftool "vimdiff"]
+[difftool "nvimdiff"]
   layout = "LOCAL,MERGED,REMOTE"
 
 [merge]
