@@ -1,3 +1,0 @@
-#!/bin/bash
-
-wlogout --protocol layer-shell --layout ~/dotfiles/.config/hypr/wlogout/layout.json --css ~/dotfiles/.config/hypr/wlogout/style.css

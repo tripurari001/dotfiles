@@ -1,9 +1,6 @@
 # ignore following file when creating sym-link
 
 ^/README.*
-install.sh
-bombadil.toml
-arch-install.sh
 wallpapers
 
 \.git

@@ -1,3 +1,0 @@
-#!/bin/bash
-
-waybar --config ~/dotfiles/.config/hypr/waybar/config --style ~/dotfiles/.config/hypr/waybar/style.css
