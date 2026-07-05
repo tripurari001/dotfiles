@@ -1,9 +1,9 @@
-**/vim/undo/
-**/vim/swaps/
-**/vim/backups/
+**/.vim/undo/
+**/.vim/swaps/
+**/.vim/backups/
 **/oldbackup/
-**/vim/.netrwhist
+**/.vim/.netrwhist
 .DS_Store
 **/.tmux/plugins/
-**/vim/plugin/packer_compiled.lua
+**/.vim/plugin/packer_compiled.lua
 .dots
