@@ -5,3 +5,5 @@ gtk-titlebar               = false
 cursor-style               = block
 cursor-style-blink         = false
 shell-integration-features = no-cursor
+window-width               = 130
+window-height              = 35
