@@ -65,7 +65,7 @@ vf() {
 # 2. Fuzzy switch/attach to Zellij sessions
 zj-switch() {
   local session
-  session=$(zellij list-sessions | awk '{print $1}' | fzf --exit-0 --prompt="Select Zellij Session: ")
+  session=$(zellij list-sessions | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2};?)?)?[mGK]//g" | awk '{print $1}' | fzf --exit-0 --prompt="Select Zellij Session: ")
   if [ -n "$session" ]; then
     zellij attach "$session"
   else
