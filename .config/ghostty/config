@@ -1,4 +1,4 @@
-font-size                  = 14
+font-size                  = 15
 font-family                = "FiraCode Nerd Font"
 theme                      = Catppuccin Mocha
 gtk-titlebar               = false
